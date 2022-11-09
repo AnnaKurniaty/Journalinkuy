@@ -1,40 +1,77 @@
 <script setup>
-import { useTheme } from 'vuetify'
-import triangleDark from '@/assets/images/misc/triangle-dark.png'
-import triangleLight from '@/assets/images/misc/triangle-light.png'
-import trophy from '@/assets/images/misc/trophy.png'
+import aviato from '@/assets/images/logos/aviato.png'
+import bitbank from '@/assets/images/logos/bitbank.png'
+import zipcar from '@/assets/images/logos/zipcar.png'
 
-const vuetifyTheme = useTheme()
-const triangleBg = computed(() => {
-  return vuetifyTheme.global.name.value === 'light' ? triangleLight : triangleDark
-})
+const earnings = [
+  {
+    avatar: zipcar,
+    title: '17 Oktober 2022',
+    subtitle: 'Created Journal 3',
+    amount: '',
+    progress: 'primary',
+  },
+  {
+    avatar: bitbank,
+    title: '28 September 2022',
+    subtitle: 'Created Journal 2',
+    amount: '',
+    progress: 'info',
+  },
+  {
+    avatar: aviato,
+    title: '1 September 2022',
+    subtitle: 'Created Journal 1',
+    amount: '',
+    progress: 'secondary',
+  },
+]
 </script>
 
 <template>
-  <VCard
-    title="Journal 3🎉"
-    subtitle="Created at 17/10/2022"
-    class="position-relative"
-  >
-    <VCardText>
-      <h5 class="text-2xl font-weight-medium text-primary">
-       -----
-      </h5>
-      <p>Journal 🚀</p>
-      <VBtn size="small">
-        View 
-      </VBtn>
-    </VCardText>
+  <VCard>
+    <VCardItem>
+      <h2>Timeline</h2>
+    </VCardItem>
+    <VCardText class="pt-4">
+      <VList class="card-list mt-9">
+        <VListItem
+          v-for="earning in earnings"
+          :key="earning.title"
+        >
+          <template #prepend>
+            <VAvatar
+              rounded
+              :image="earning.avatar"
+            />
+          </template>
 
+          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+            {{ earning.title }}
+          </VListItemTitle>
+          <VListItemSubtitle class="text-xs">
+            {{ earning.subtitle }}
+          </VListItemSubtitle>
+
+          <template #append>
+            <div>
+              <h6 class="text-sm mb-2">
+                {{ earning.amount }}
+              </h6>
+              <VProgressLinear
+                :color="earning.progress"
+                model-value="80"
+              />
+            </div>
+          </template>
+        </VListItem>
+      </VList>
+    </VCardText>
   </VCard>
 </template>
 
-<style lang="scss">
-
-.trophy {
-  position: absolute;
-  inline-size: 4.9375rem;
-  inset-block-end: 2rem;
-  inset-inline-end: 2rem;
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 2.625rem;
 }
 </style>

@@ -1,70 +1,34 @@
 <script setup>
-import aviato from '@/assets/images/logos/aviato.png'
-import bitbank from '@/assets/images/logos/bitbank.png'
-import zipcar from '@/assets/images/logos/zipcar.png'
-
-const earnings = [
-  {
-    avatar: zipcar,
-    title: '17 Oktober 2022',
-    subtitle: 'Created Journal 3',
-    amount: '',
-    progress: 'primary',
-  },
-  {
-    avatar: bitbank,
-    title: '28 September 2022',
-    subtitle: 'Created Journal 2',
-    amount: '',
-    progress: 'info',
-  },
-  {
-    avatar: aviato,
-    title: '1 September 2022',
-    subtitle: 'Created Journal 1',
-    amount: '',
-    progress: 'secondary',
-  },
-]
+import AnalyticsAward from '@/views/dashboards/analytics/AnalyticsAward.vue'
+//import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
 </script>
-
 <template>
   <VCard>
     <VCardItem>
-      <h2>Timeline</h2>
+      <h2>Journal</h2>
     </VCardItem>
     <VCardText class="pt-4">
       <VList class="card-list mt-9">
-        <VListItem
-          v-for="earning in earnings"
-          :key="earning.title"
-        >
-          <template #prepend>
-            <VAvatar
-              rounded
-              :image="earning.avatar"
-            />
-          </template>
-
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
-            {{ earning.title }}
-          </VListItemTitle>
-          <VListItemSubtitle class="text-xs">
-            {{ earning.subtitle }}
-          </VListItemSubtitle>
-
-          <template #append>
-            <div>
-              <h6 class="text-sm mb-2">
-                {{ earning.amount }}
-              </h6>
-              <VProgressLinear
-                :color="earning.progress"
-                model-value="80"
-              />
-            </div>
-          </template>
-        </VListItem>
+        <VRow>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <AnalyticsAward />
+          </VCol>
+        </VRow>
       </VList>
     </VCardText>
   </VCard>
