@@ -1,6 +1,4 @@
 <script setup>
-import upgradeBannerDark from '@/assets/images/pro/upgrade-banner-dark.png'
-import upgradeBannerLight from '@/assets/images/pro/upgrade-banner-light.png'
 import logo from '@/assets/logo.svg?raw'
 import {
   VerticalNavLink,
@@ -138,36 +136,9 @@ const upgradeBanner = computed(() => {
     />
   </ul>
 
-  <!-- 👉 illustration -->
-  <a
-    href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      :src="upgradeBanner"
-      alt="upgrade-banner"
-      transition="scale-transition"
-      class="upgrade-banner mx-auto"
-      style="max-width: 230px"
-    >
-  </a>
 </template>
 
 <style lang="scss">
-// .v-navigation-drawer {
-//   height: 100%;
-
-//   .v-navigation-drawer__content {
-//     display: flex;
-//     flex-direction: column;
-
-//     > ul {
-//       flex-grow: 1;
-//     }
-//   }
-// }
-
 .upgrade-banner {
   margin-top: auto;
   // position: absolute;

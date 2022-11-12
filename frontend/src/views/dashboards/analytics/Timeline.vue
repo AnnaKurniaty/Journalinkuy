@@ -18,13 +18,13 @@ const earnings = [
     amount: '',
     progress: 'info',
   },
-  {
-    avatar: aviato,
-    title: '1 September 2022',
-    subtitle: 'Created Journal 1',
-    amount: '',
-    progress: 'secondary',
-  },
+  // {
+  //   avatar: aviato,
+  //   title: '1 September 2022',
+  //   subtitle: 'Created Journal 1',
+  //   amount: '',
+  //   progress: 'secondary',
+  // },
 ]
 </script>
 

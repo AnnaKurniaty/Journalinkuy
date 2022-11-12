@@ -1,35 +1,40 @@
 <script setup>
-import AnalyticsAward from '@/views/dashboards/analytics/AnalyticsAward.vue'
+import Journal from '@/views/dashboards/analytics/Journal.vue'
 //import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
 </script>
+
 <template>
   <VCard>
-    <VCardItem>
+    <!-- <VCardItem>
       <h2>Journal</h2>
-    </VCardItem>
+    </VCardItem> -->
+
     <VCardText class="pt-4">
-      <VList class="card-list mt-9">
         <VRow>
           <VCol cols="4"  md="6">
-            <AnalyticsAward />
+            <Journal />
+          </VCol>
+
+          <VCol cols="4"  md="6">
+            <Journal />
+          </VCol>
+
+          <VCol cols="4"  md="6">
+            <Journal />
           </VCol>
           <VCol cols="4"  md="6">
-            <AnalyticsAward />
+            <Journal />
           </VCol>
+
           <VCol cols="4"  md="6">
-            <AnalyticsAward />
+            <Journal />
           </VCol>
+
           <VCol cols="4"  md="6">
-            <AnalyticsAward />
+            <Journal />
           </VCol>
-          <VCol cols="4"  md="6">
-            <AnalyticsAward />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <AnalyticsAward />
-          </VCol>
+          
         </VRow>
-      </VList>
     </VCardText>
   </VCard>
 </template>

@@ -11,32 +11,9 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 <template>
   <VerticalNavLayout>
     <!-- 👉 navbar -->
-    <h1> Hello, Kurkur</h1>
-    <p>How it is going on?</p>
-   
-    <h2> My Journals</h2>
     <template #navbar>
-      <VTextField
-        rounded
-        prepend-inner-icon="mdi-magnify"
-        density="compact"
-        max-width="100px"
-        class="app-bar-search d-none d-sm-block"
-      />
-
       <VSpacer />
 
-      <a
-        href="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free"
-        target="_blank"
-        rel="noopener noreferrer"
-        style="color: inherit"
-      >
-        <VIcon
-          class="ms-6 me-4"
-          icon="mdi-github"
-        />
-      </a>
       <NavbarThemeSwitcher />
       <VBtn
         icon
@@ -71,18 +48,5 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 </template>
 
 <style lang="scss">
-.app-bar-search {
-  .v-input__control {
-    width: 236px
-  }
 
-  .v-field__outline__start {
-    border-radius: 28px 0 0 28px !important;
-    flex-basis: 20px !important;
-  }
-
-  .v-field__outline__end {
-    border-radius: 0 28px 28px 0 !important;
-  }
-}
 </style>

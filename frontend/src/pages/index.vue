@@ -1,24 +1,31 @@
 <script setup>
-import AnalyticsSalesByCountries from '@/views/dashboards/analytics/AnalyticsSalesByCountries.vue'
-import AnalyticsTotalEarning from '@/views/dashboards/analytics/AnalyticsTotalEarning.vue'
-import AnalyticsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsWeeklyOverview.vue'
+import Event from '@/views/dashboards/analytics/Event.vue'
+import Journals from '@/views/dashboards/analytics/Journals.vue'
+import Timeline from '@/views/dashboards/analytics/Timeline.vue'
 </script>
 
 <template>
-  <VRow class="match-height">
-    <VCol cols="12"  md="8" >
-      <AnalyticsTotalEarning />
-    </VCol>
-    <VCol cols="12" md="4">
-      <VRow>
-        <VCol cols="12" md="12">
-          <AnalyticsWeeklyOverview />
-        </VCol>
+  <div class="container">
+    <h1> Hello, Kurkur</h1>
+    <p>How it is going on?</p>
+    <h2> Today Journal</h2>
+    <VRow class="match-height">
 
-        <VCol cols="12" md="12" >
-          <AnalyticsSalesByCountries />
-        </VCol>
-      </VRow>
-    </VCol>
-  </VRow>
+      <VCol cols="12"  md="8" >
+        <Journals />
+      </VCol>
+
+      <VCol cols="12" md="4">
+        <VRow>
+          <VCol cols="12" md="12">
+            <Timeline />
+          </VCol>
+
+          <VCol cols="12" md="12" >
+            <Event />
+          </VCol>
+        </VRow>
+      </VCol>
+    </VRow>
+  </div>
 </template>
