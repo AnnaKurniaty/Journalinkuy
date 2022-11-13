@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@syncfusion/ej2-vue-calendars": "^20.3.56"
+  }
+}

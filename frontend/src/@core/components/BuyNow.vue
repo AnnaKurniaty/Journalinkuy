@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <VBtn
     color="error"
     class="product-buy-now"
@@ -25,4 +25,4 @@
     }
   }
 }
-</style>
+</style> -->

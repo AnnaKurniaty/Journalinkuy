@@ -87,19 +87,19 @@ const upgradeBanner = computed(() => {
     />
 
     <!-- ℹ️ This path doesn't exist so 404 route will catch this undefined path -->
-    <VerticalNavLink
+    <!-- <VerticalNavLink
       :item="{
         title: 'Error',
         to: { path: '/error' },
         target: '_blank',
         icon: { icon: 'mdi-alert-circle-outline' }
       }"
-    />
+    /> -->
 
     <!-- 👉 User Interface -->
     <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" />
 
-    <VerticalNavLink
+    <!-- <VerticalNavLink
       :item="{
         title: 'Typography',
         to: 'typography',
@@ -119,14 +119,14 @@ const upgradeBanner = computed(() => {
         to: 'card-basic',
         icon: { icon: 'mdi-credit-card-outline' }
       }"
-    />
-    <VerticalNavLink
+    /> -->
+    <!-- <VerticalNavLink
       :item="{
         title: 'Tables',
         to: 'tables',
         icon: { icon: 'mdi-table' }
       }"
-    />
+    /> -->
     <VerticalNavLink
       :item="{
         title: 'Form Layouts',

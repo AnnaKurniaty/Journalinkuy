@@ -18,13 +18,13 @@ const earnings = [
     amount: '',
     progress: 'info',
   },
-  // {
-  //   avatar: aviato,
-  //   title: '1 September 2022',
-  //   subtitle: 'Created Journal 1',
-  //   amount: '',
-  //   progress: 'secondary',
-  // },
+  {
+    avatar: aviato,
+    title: '1 September 2022',
+    subtitle: 'Created Journal 1',
+    amount: '',
+    progress: 'secondary',
+  },
 ]
 </script>
 
@@ -33,8 +33,9 @@ const earnings = [
     <VCardItem>
       <h2>Timeline</h2>
     </VCardItem>
-    <VCardText class="pt-4">
-      <VList class="card-list mt-9">
+    
+    <VCardText>
+      <VList class="card-list">
         <VListItem
           v-for="earning in earnings"
           :key="earning.title"

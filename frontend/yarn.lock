@@ -784,6 +784,95 @@
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
 
+"@syncfusion/ej2-base@~20.3.56":
+  "integrity" "sha512-BeXX3XBOs1kv9/rki9f1kPuLbNJU06kJE8o0jLY62fEd/U5k2KkuG5Z/WbWHJIuQVH5dv57ZM2Adl3rG+vkvjg=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-base/-/ej2-base-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-icons" "~20.3.56"
+
+"@syncfusion/ej2-buttons@~20.3.56":
+  "integrity" "sha512-86CdaC4GgqsECeJbbrJt9gKsIT0tJ8EtolskKTarhtptKVfc/ET7Wr/ywV1EMf2/M8biRL9ev6jC8m5k8YbVrA=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-buttons/-/ej2-buttons-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+
+"@syncfusion/ej2-calendars@20.3.56":
+  "integrity" "sha512-Aw2nBsc9+vL0QzbJvb37ebDOvrdyCHs7DIn7ehLjOMaf02cB8w2919gOQ2/4xD/sCtAHtfLoM68k/MVb3M31hw=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-calendars/-/ej2-calendars-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-buttons" "~20.3.56"
+    "@syncfusion/ej2-inputs" "~20.3.56"
+    "@syncfusion/ej2-lists" "~20.3.56"
+    "@syncfusion/ej2-popups" "~20.3.56"
+
+"@syncfusion/ej2-data@~20.3.56":
+  "integrity" "sha512-Sb1LBOOkjS1fduHhrhelofIeAbV9TDzPnGwPHs+j0yZLX8Pvw7nBBANDzIX2R9nATVP3EIiGIcEyylYq3mPwtA=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-data/-/ej2-data-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+
+"@syncfusion/ej2-icons@~20.3.56":
+  "integrity" "sha512-sv5y/J85PZU8fmFNG1b5ftLroQHFicTKcfKo0oy72KSKxdLZ3xd1pjMS9/5m5z609doksIbFltlisO0buhzflA=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-icons/-/ej2-icons-20.3.56.tgz"
+  "version" "20.3.56"
+
+"@syncfusion/ej2-inputs@~20.3.56":
+  "integrity" "sha512-w1kLCHnzDJog2fBZBArKMulifAur1PXSxMsXau1PLFLXLXvpfRpl3Qq4s17ksJIp4qEm74AmlwcUMfmunsa4wQ=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-inputs/-/ej2-inputs-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-buttons" "~20.3.56"
+    "@syncfusion/ej2-popups" "~20.3.56"
+    "@syncfusion/ej2-splitbuttons" "~20.3.56"
+
+"@syncfusion/ej2-lists@~20.3.56":
+  "integrity" "sha512-I7BizR/RANyxzwSV+tuJMwN5sK2GHi7tOZpiaIGE8b5sm6ygffR9cIniomDvt4lz4JhmBeBrTpzJbpj4XjbCFQ=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-lists/-/ej2-lists-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-buttons" "~20.3.56"
+    "@syncfusion/ej2-data" "~20.3.56"
+
+"@syncfusion/ej2-popups@~20.3.56":
+  "integrity" "sha512-67fDJG3rMTDCfnvGaSfTciFAnhxpnPY0vfgOPe1FBdG7C+3AHhugYh4cOffdgenvNSCV6aBK8CIOtBJb/SSTEw=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-popups/-/ej2-popups-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-buttons" "~20.3.56"
+
+"@syncfusion/ej2-splitbuttons@~20.3.56":
+  "integrity" "sha512-z0/j4CAaKu4YM3ggtcWm6ZDQjuE+wKp7sbC8iAXp1OM0WWrOYpB//SB5qV4jVuXajcsrImBlmrYsKR/XPt4Cuw=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-splitbuttons/-/ej2-splitbuttons-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-popups" "~20.3.56"
+
+"@syncfusion/ej2-vue-base@~20.3.56":
+  "integrity" "sha512-lp0wAnWz5Ls06t46UnyxqJulU3z2ZvWdJNZp+BJkRPZW8nLBk9XuFl5HEirRaf9ljJsmSwtBMVzf8uYW1NxtNQ=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-vue-base/-/ej2-vue-base-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "glob" "^7.0.5"
+
+"@syncfusion/ej2-vue-calendars@^20.3.56":
+  "integrity" "sha512-kGGOzgRKwApuCjhkPehTGAfTcXYHLLczDzWqPqZq+5uF0ZMD+9wyC5dXIpceflpxy+zBxbwEFTMqGLdr3tAXGA=="
+  "resolved" "https://registry.npmjs.org/@syncfusion/ej2-vue-calendars/-/ej2-vue-calendars-20.3.56.tgz"
+  "version" "20.3.56"
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.56"
+    "@syncfusion/ej2-calendars" "20.3.56"
+    "@syncfusion/ej2-vue-base" "~20.3.56"
+
 "@trysound/sax@0.2.0":
   "integrity" "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="
   "resolved" "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"
@@ -1700,6 +1789,11 @@
   "resolved" "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.9.0.tgz"
   "version" "1.9.0"
 
+"core-js@^3.15.2":
+  "integrity" "sha512-+DkDrhoR4Y0PxDz6rurahuB+I45OsEUv8E1maPTB6OuHRohMMcznBq9TMpdpDMm/hUPob/mJJS3PqgbHpMTQgw=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.26.0.tgz"
+  "version" "3.26.0"
+
 "cosmiconfig@^5.0.0":
   "integrity" "sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA=="
   "resolved" "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.1.tgz"
@@ -1895,6 +1989,16 @@
   "integrity" "sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w=="
   "resolved" "https://registry.npmjs.org/csstype/-/csstype-2.6.21.tgz"
   "version" "2.6.21"
+
+"date-fns-tz@^1.1.4":
+  "integrity" "sha512-1t1b8zyJo+UI8aR+g3iqr5fkUHWpd58VBx8J/ZSQ+w7YrGlw80Ag4sA86qkfCXRBLmMc4I2US+aPMd4uKvwj5g=="
+  "resolved" "https://registry.npmjs.org/date-fns-tz/-/date-fns-tz-1.3.7.tgz"
+  "version" "1.3.7"
+
+"date-fns@^2.22.1":
+  "integrity" "sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA=="
+  "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
+  "version" "2.29.3"
 
 "debug@^2.6.9":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
@@ -2825,7 +2929,7 @@
   dependencies:
     "is-glob" "^4.0.1"
 
-"glob@^7.1.3":
+"glob@^7.0.5", "glob@^7.1.3":
   "integrity" "sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q=="
   "resolved" "https://registry.npmjs.org/glob/-/glob-7.2.3.tgz"
   "version" "7.2.3"
@@ -5308,6 +5412,16 @@
     "es-abstract" "^1.17.2"
     "has-symbols" "^1.0.1"
     "object.getownpropertydescriptors" "^2.1.0"
+
+"v-calendar@^2.4.1":
+  "integrity" "sha512-nhzOlHM2cinv+8jIcnAx+nTo63U40szv3Ig41uLMpGK1U5sApgCP6ggigprsnlMOM5VRq1G/1B8rNHkRrLbGjw=="
+  "resolved" "https://registry.npmjs.org/v-calendar/-/v-calendar-2.4.1.tgz"
+  "version" "2.4.1"
+  dependencies:
+    "core-js" "^3.15.2"
+    "date-fns" "^2.22.1"
+    "date-fns-tz" "^1.1.4"
+    "lodash" "^4.17.21"
 
 "v8-compile-cache@^2.3.0":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
