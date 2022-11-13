@@ -2,26 +2,27 @@
 import aviato from '@/assets/images/logos/aviato.png'
 import bitbank from '@/assets/images/logos/bitbank.png'
 import zipcar from '@/assets/images/logos/zipcar.png'
+import circle from '@/assets/images/logos/circle.png'
 
 const earnings = [
   {
-    avatar: zipcar,
-    title: '17 Oktober 2022',
-    subtitle: 'Created Journal 3',
+    avatar: circle,
+    title: '17/10/2022',
+    subtitle: 'Update Journal',
     amount: '',
     progress: 'primary',
   },
   {
-    avatar: bitbank,
-    title: '28 September 2022',
-    subtitle: 'Created Journal 2',
+    avatar: circle,
+    title: '28/09/2022',
+    subtitle: 'Update Journal',
     amount: '',
     progress: 'info',
   },
   {
-    avatar: aviato,
-    title: '1 September 2022',
-    subtitle: 'Created Journal 1',
+    avatar: circle,
+    title: '01/09/2022',
+    subtitle: 'Update Journal',
     amount: '',
     progress: 'secondary',
   },

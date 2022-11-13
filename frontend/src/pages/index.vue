@@ -3,6 +3,7 @@ import Event from '@/views/dashboards/analytics/Event.vue'
 import Journals from '@/views/dashboards/analytics/Journals.vue'
 import Timeline from '@/views/dashboards/analytics/Timeline.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
+import moment from 'moment'
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
   <div class="main"  style="width: 200%; " >
     <h1> Hello, Kurkur 👋</h1>
     <p>How it is going on?</p>  
-    <h2> Today Journal</h2>
+    <h2> Today's Journal</h2>
+    <p> 🗓 {{ moment(new Date()).format('DD-MM-YYYY') }} </p>
     <VRow class="match-height">
 
       <VCol cols="12"  md="8" >
@@ -43,7 +45,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 
     <div style="position: relative;">
       <h2>Your Journal </h2>
-      <a href="journal"><img src="\src\assets\images\pages\thumbnail.jpg" alt="Avatar" style="width:200px; border-radius: 5%;"></a>
+      <a href="journal"><img src="\src\assets\images\pages\thumbnail.jpg"  style="width:13rem; border-radius: 5%;"></a>
       <div style="position: absolute;  bottom: 1%;left: 5%;"> 
         <p style="color:white;"> Open Here </p>
       </div>
@@ -56,7 +58,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
         <p style="font-style :italic; text-align: right;">―Mandy Hale”</p>
         </div>
         <div style=" box-shadow: 0 0.5rem 0.5rem hsl(0 0% 0% / 10%); padding: 1rem; border-radius: 1rem;">
-        <p style="font-style :italic;">““Don’t rush into love. You’ll find the person meant for you when you least expect it.””</p>
+        <p style="font-style :italic;">“Don’t rush into love. You’ll find the person meant for you when you least expect it.”</p>
         <p style="font-style :italic; text-align: right;">―Franzie Gubatina”</p>
         </div>
     </div>

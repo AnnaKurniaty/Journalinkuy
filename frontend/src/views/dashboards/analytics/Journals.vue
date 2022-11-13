@@ -1,6 +1,10 @@
 <script setup>
-import Journal from '@/views/dashboards/analytics/Journal.vue'
-//import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
+import Journal1 from '@/views/dashboards/analytics/Journal1.vue'
+import Journal2 from '@/views/dashboards/analytics/Journal2.vue'
+import Journal3 from '@/views/dashboards/analytics/Journal3.vue'
+import Journal4 from '@/views/dashboards/analytics/Journal4.vue'
+import Journal5 from '@/views/dashboards/analytics/Journal5.vue'
+import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
 </script>
 
 <template>
@@ -12,26 +16,24 @@ import Journal from '@/views/dashboards/analytics/Journal.vue'
     <VCardText class="pt-4">
         <VRow>
           <VCol cols="4"  md="6">
-            <Journal />
+            <Journal1 />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <Journal2 />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <Journal3 />
+          </VCol>
+          <VCol cols="4"  md="6">
+            <Journal4 />
           </VCol>
 
           <VCol cols="4"  md="6">
-            <Journal />
+            <Journal5 />
           </VCol>
 
           <VCol cols="4"  md="6">
-            <Journal />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal />
-          </VCol>
-
-          <VCol cols="4"  md="6">
-            <Journal />
-          </VCol>
-
-          <VCol cols="4"  md="6">
-            <Journal />
+            <Journal6 />
           </VCol>
           
         </VRow>

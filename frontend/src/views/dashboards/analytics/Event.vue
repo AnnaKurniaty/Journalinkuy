@@ -1,7 +1,7 @@
 <script setup>
 const salesByCountries = [
   {
-    abbr: 'US',
+    abbr: '🗓',
     amount: 'Meeting',
     country: '',
     change: '',
@@ -9,12 +9,12 @@ const salesByCountries = [
     color: 'success',
   },
   {
-    abbr: 'UK',
-    amount: 'Syahda Birthday',
+    abbr: '🗓',
+    amount: 'Ann Birthday',
     country: '',
     change: '',
     sales: '',
-    color: 'error',
+    color: 'success',
   },
 ]
 </script>
@@ -44,13 +44,13 @@ const salesByCountries = [
 
           <VListItemTitle class="mb-1">
             <span class="text-sm font-weight-semibold">{{ data.amount }}</span>
-            <VIcon
+            <!-- <VIcon
               size="22"
               :color="data.change.charAt(0) === '+' ? 'success' : 'error'"
               class="mx-1"
             >
               {{ data.change.charAt(0) === '+' ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
-            </VIcon>
+            </VIcon> -->
             <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'text-success' : 'text-error'}`">
               {{ data.change.slice(1) }}
             </span>
@@ -65,7 +65,7 @@ const salesByCountries = [
               <h4 class="font-weight-semibold">
                 {{ data.sales }}
               </h4>
-              <span class="text-xs text-medium-emphasis">Sales</span>
+              <span class="text-xs text-medium-emphasis"></span>
             </div>
           </template>
         </VListItem>

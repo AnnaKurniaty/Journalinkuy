@@ -1,5 +1,5 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar1 from '@/assets/images/avatars/avatar-4.png'
 
 const avatarBadgeProps = {
   dot: true,
@@ -45,10 +45,10 @@ const avatarBadgeProps = {
             </template>
 
             <VListItemTitle class="font-weight-semibold">
-              John Doe
+              Kurkur
             </VListItemTitle>
             <VListItemSubtitle class="text-disabled">
-              Admin
+              @kurkurcans
             </VListItemSubtitle>
           </VListItem>
 
