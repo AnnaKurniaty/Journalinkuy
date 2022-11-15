@@ -27,15 +27,12 @@ import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
           <VCol cols="4"  md="6">
             <Journal4 />
           </VCol>
-
           <VCol cols="4"  md="6">
             <Journal5 />
           </VCol>
-
           <VCol cols="4"  md="6">
             <Journal6 />
           </VCol>
-          
         </VRow>
     </VCardText>
   </VCard>

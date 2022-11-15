@@ -5,14 +5,33 @@ const vuetifyTheme = useTheme()
 
 <template>
   <VCard
-    title="Today's Goal "
+    v-for="(post) in posts" :key="post._id"
+    title= ""
     subtitle="🥅"
-    class="position-relative"
-  >
-  
+    class="position-relative">
     <VCardText>
-      <Textarea v-model="value"  rows="5" cols="15" placeholder="Write here" />
+      <h4>{{post.journal_title}}</h4>
+      <Textarea v-model="value" rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea>
     </VCardText>
 
   </VCard>
 </template>
+
+<script>
+import API from '@/api';
+import axios from 'axios';
+
+export default {
+  name: 'journal',
+  data(){
+    return {
+      posts: [],
+    }
+  },
+  async created() {
+    axios.get('http://localhost:5000/api/post').then(response => {
+      this.posts = response.data;
+    });
+  }
+}
+</script>
