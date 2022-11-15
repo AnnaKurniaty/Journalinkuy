@@ -56,6 +56,7 @@ const email = ref('')
             cols="12"
             md="6"
         >
+
         <input type="file" @change="onFileChanged">
         </VCol>
         
