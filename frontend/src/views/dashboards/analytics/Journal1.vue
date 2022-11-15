@@ -9,9 +9,9 @@ const vuetifyTheme = useTheme()
     subtitle="🥅"
     class="position-relative"
   >
-  
     <VCardText>
       <Textarea v-model="value"  rows="5" cols="15" placeholder="Write here" />
+    <!-- <VBtn type="submit">Submit</VBtn> -->
     </VCardText>
 
   </VCard>
