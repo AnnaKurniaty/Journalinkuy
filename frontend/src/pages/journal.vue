@@ -1,4 +1,5 @@
 <script setup>
+
 const firstName = ref('')
 const lastName = ref('')
 const city = ref('')
@@ -11,27 +12,16 @@ const email = ref('')
     <div >
     <VForm @submit.prevent="() => {}">
         <VRow>
+
         <!-- 👉 First Name -->
         <VCol
             cols="12"
             md="6"
         >
             <VTextField
-            v-model="firstName"
-            label="First Name"
-            placeholder="First Name"
-            />
-        </VCol>
-
-        <!-- 👉 Last Name -->
-        <VCol
-            cols="12"
-            md="6"
-        >
-            <VTextField
-            v-model="lastName"
-            label="Last Name"
-            placeholder="Last Name"
+            v-model="judul"
+            label="Jurnal Baru"
+            placeholder="Judul"
             />
         </VCol>
 
@@ -40,49 +30,36 @@ const email = ref('')
             cols="12"
             md="6"
         >
-            <VTextField
-            v-model="email"
-            label="Email"
-            placeholder="Email"
-            />
         </VCol>
 
-        <!-- 👉 City -->
+        <!-- 👉 Email -->
         <VCol
             cols="12"
             md="6"
         >
             <VTextField
-            v-model="city"
-            label="City"
-            placeholder="City"
+            v-model="message"
+            label="Content"
+            placeholder="New Text Document..."
             />
         </VCol>
 
-        <!-- 👉 Country -->
+        <!-- 👉 Email -->
         <VCol
             cols="12"
             md="6"
         >
-            <VTextField
-            v-model="country"
-            label="Country"
-            placeholder="Country"
-            />
         </VCol>
 
-        <!-- 👉 Company -->
+        <!-- 👉 Email -->
         <VCol
             cols="12"
             md="6"
         >
-            <VTextField
-            v-model="company"
-            label="Company"
-            placeholder="Company"
-            />
-        </VCol>
 
+        <input type="file" @change="onFileChanged">
+        </VCol>
+        
         <VCol
             cols="12"
             class="d-flex gap-4"
