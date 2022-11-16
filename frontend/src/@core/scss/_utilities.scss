@@ -30,6 +30,7 @@ $card-spacer-content: 16px;
 .match-height.v-row {
   .v-card {
     block-size: 100%;
+    height: auto;
   }
 }
 

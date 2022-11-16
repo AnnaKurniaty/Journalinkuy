@@ -4,17 +4,18 @@ const vuetifyTheme = useTheme()
 </script>
 
 <template>
-  <VCard
-    v-for="(post) in posts" :key="post._id"
-    title= ""
-    subtitle="🥅"
-    class="position-relative">
-    <VCardText>
-      <h4>{{post.journal_title}}</h4>
-      <Textarea v-model="value" rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea>
-    </VCardText>
-
-  </VCard>
+  
+  <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
+    <VCard
+      title= ""
+      subtitle="🥅"
+      class="position-relative">
+      <VCardText>
+        <h4>{{post.journal_title}}</h4>
+        <Textarea rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea>
+      </VCardText>
+    </VCard>
+  </VCol>
 </template>
 
 <script>

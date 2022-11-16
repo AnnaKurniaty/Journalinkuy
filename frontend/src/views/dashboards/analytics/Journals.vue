@@ -15,24 +15,7 @@ import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
 
     <VCardText class="pt-4">
         <VRow>
-          <VCol cols="4"  md="6">
-            <Journal1 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal2 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal3 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal4 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal5 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal6 />
-          </VCol>
+          <Journal1 />
         </VRow>
     </VCardText>
   </VCard>
