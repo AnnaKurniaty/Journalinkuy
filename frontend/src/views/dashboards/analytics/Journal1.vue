@@ -4,22 +4,20 @@ const vuetifyTheme = useTheme()
 </script>
 
 <template>
-  
   <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
     <VCard
       title= ""
-      subtitle="🥅"
+      subtitle="📚"
       class="position-relative">
       <VCardText>
         <h4>{{post.journal_title}}</h4>
-        <Textarea rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea>
+        <a href="timeline"> <Textarea rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea></a>
       </VCardText>
     </VCard>
   </VCol>
 </template>
 
 <script>
-import API from '@/api';
 import axios from 'axios';
 
 export default {

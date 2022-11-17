@@ -12,7 +12,7 @@
 import  Editor  from 'tiptap'
 
 export default 
-  components: 
+  components; 
     Editor,
   ,
 

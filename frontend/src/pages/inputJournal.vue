@@ -1,11 +1,19 @@
-<script setup>
+<script>
+import axios from 'axios';
 
-const firstName = ref('')
-const lastName = ref('')
-const city = ref('')
-const country = ref('')
-const company = ref('')
-const email = ref('')
+export default {
+  name: 'journal',
+  data(){
+    return {
+      posts: [],
+    }
+  },
+  async created() {
+    axios.get('http://localhost:5000/api/post/:id').then(response => {
+      this.posts = response.data;
+    });
+  }
+}
 </script>
 
 <template>
@@ -22,7 +30,7 @@ const email = ref('')
             v-model="judul"
             label="Jurnal Baru"
             placeholder="Judul"
-            />
+            >{{post.journal_title}}</VTextField>
         </VCol>
 
         <!-- 👉 Email -->
@@ -40,8 +48,8 @@ const email = ref('')
             <VTextField
             v-model="message"
             label="Content"
-            placeholder="New Text Document..."
-            />
+            placeholder="New Text Documents.."
+            >{{post.content}}</VTextField>
         </VCol>
 
         <!-- 👉 Email -->
