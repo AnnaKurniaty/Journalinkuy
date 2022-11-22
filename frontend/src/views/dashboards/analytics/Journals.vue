@@ -17,6 +17,26 @@ import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
         <VRow>
           <Journal1 />
         </VRow>
+        
+        <VRow>
+          <Journal2 />
+        </VRow>
+
+        <VRow>
+          <Journal3 />
+        </VRow>
+
+        <VRow>
+          <Journal4 />
+        </VRow>
+
+        <VRow>
+          <Journal5 />
+        </VRow>
+
+        <VRow>
+          <Journal6 />
+        </VRow>
     </VCardText>
   </VCard>
 </template>
