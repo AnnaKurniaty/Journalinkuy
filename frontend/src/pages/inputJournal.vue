@@ -24,7 +24,7 @@ export default {
     <VForm @submit.prevent="() => {}">
         <VRow>
 
-        <!-- 👉 First Name -->
+
         <VCol
             cols="12"
             md="6"
@@ -36,14 +36,14 @@ export default {
             >{{post.journal_title}}</VTextField>
         </VCol>
 
-        <!-- 👉 Email -->
+
         <VCol
             cols="12"
             md="6"
         >
         </VCol>
 
-        <!-- 👉 Email -->
+
         <VCol
             cols="12"
             md="6"
@@ -55,14 +55,14 @@ export default {
             >{{post.content}}</VTextField>
         </VCol>
 
-        <!-- 👉 Email -->
+
         <VCol
             cols="12"
             md="6"
         >
         </VCol>
 
-        <!-- 👉 Email -->
+
         <VCol
             cols="12"
             md="6"
