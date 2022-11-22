@@ -22,6 +22,16 @@ module.exports = class API {
         }
     }
 
+    static async fetchPostByDate(req, res) {
+        const created = req.params.created;
+        try {
+            const post = await Post.findByDate(created);
+            res.status(200).json(post);
+        } catch (error) {
+            res.status(404).json({ message: error.message })
+        }
+    }
+
     static async createPost(req, res) {
         const post = req.body;
         const imagename = req.file.filename;

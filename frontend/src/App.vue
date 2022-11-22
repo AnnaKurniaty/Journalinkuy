@@ -16,13 +16,12 @@ import BuyNow from '@core/components/BuyNow.vue'
 </script> -->
 
 <template>
-    <div id="app">
-        <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
-    </div>
-  <VApp>
-    <VLayout class="layout-wrapper layout-nav-type-vertical">
-      <RouterView />
-    </VLayout>
-  </VApp>
+  <div id="app">
+      <ckeditor></ckeditor>
+  </div>
+<VApp>
+  <VLayout class="layout-wrapper layout-nav-type-vertical">
+    <RouterView />
+  </VLayout>
+</VApp>
 </template>
-

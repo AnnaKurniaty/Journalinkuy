@@ -4,12 +4,15 @@ const vuetifyTheme = useTheme()
 </script>
 
 <template>
+  <v-alert border="left" close-text="Close Alert" color="green accent-4" dark dismissible v-if="this.$route.params.message">
+      {{ this.$route.params.message }}
+  </v-alert>
   <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
     <VCard
       title= ""
-      subtitle="📚"
+      subtitle="🥅"
       class="position-relative">
-      <VCardText>
+      <VCardText :to="{ name: 'post', params: { id: post._id } }">
         <h4>{{post.journal_title}}</h4>
         <a href="timeline"> <Textarea rows="5" cols="15" placeholder="Write here">{{post.content}}</Textarea></a>
       </VCardText>
