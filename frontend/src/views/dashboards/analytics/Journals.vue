@@ -1,5 +1,6 @@
 <script setup>
 import { useTheme } from 'vuetify'
+import moment from 'moment'
 const vuetifyTheme = useTheme()
 </script>
 
@@ -13,12 +14,11 @@ const vuetifyTheme = useTheme()
         <VRow>
           <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
             <VCard
-              title= ""
               subtitle="🥅"
               class="position-relative">
-              <VCardText :to="{ name: 'post', params: { id: post._id } }">
-                <h4>{{posts.journal_title}}</h4>
-                <a href="timeline"> <Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea></a>
+              <VCardText :to="{ name: 'timeline', params: { id: post._id } }">
+                <h4>{{post.journal_title}}</h4>
+                <a href="timeline"><Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea></a>
               </VCardText>
               <VCardText>
               <v-btn
@@ -43,7 +43,7 @@ const vuetifyTheme = useTheme()
 </style>
 
 <script>
-import axios from 'axios';
+import API from '@/api';
 
 export default {
   name: 'journal',
@@ -53,9 +53,9 @@ export default {
     }
   },
   async created() {
-    axios.get('http://localhost:5000/api/post').then(response => {
-      this.posts = response.data;
-    });
+    const date = moment(new Date()).format('YYYY-MM-DD');
+    this.posts = await API.getPostByDate(date);
+    // console.log(response);
   }
 }
 </script>

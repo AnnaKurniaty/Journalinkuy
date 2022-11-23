@@ -3,6 +3,7 @@ import API from '@/api';
 import axios from 'axios';
 
     export default {
+        name : 'timeline',
         data() {
             return {
                 post: {},
@@ -10,7 +11,7 @@ import axios from 'axios';
         },
         async created(){
             //const response = await API.getPostByID(this.$route.params.id)
-            axios.get('https://localhost:5000/api/post/:id').then(response => {
+            axios.get('http://localhost:5000/api/post/id/').then(response => {
                 this.post = response.data;
             });
         },

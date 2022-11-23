@@ -9,7 +9,11 @@ export default class API {
     }
     // to get single post by id
     static async getPostByID(id){
-        const res = await axios.get(`${url}/${id}`);
+        const res = await axios.get(`${url}/id/${id}`);
+        return res.data;
+    }
+    static async getPostByDate(created){
+        const res = await axios.get(`${url}/date/${created}`);
         return res.data;
     }
     // to insert post into database

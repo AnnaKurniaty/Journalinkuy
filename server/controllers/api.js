@@ -24,11 +24,20 @@ module.exports = class API {
 
     static async fetchPostByDate(req, res) {
         const created = req.params.created;
+        var date = new Date(created);
+        console.log()
         try {
-            const post = await Post.findByDate(created);
+            const post = await Post.find({
+                created: {
+                    $gte: date.toISOString(), 
+                    $lt: new Date(date.setDate(date.getDate() + 1)).toISOString()
+                }
+            });
+            console.log(post)
             res.status(200).json(post);
         } catch (error) {
-            res.status(404).json({ message: error.message })
+            console.log(error)
+            res.status(400).json({ message: error.message })
         }
     }
 

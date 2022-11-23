@@ -12,7 +12,7 @@ import moment from 'moment'
     <h1> Hello, Kurkur 👋</h1>
     <p>How it is going on?</p>  
     <h2> Today's Journal</h2>
-    <p> 🗓 {{ moment(new Date()).format('DD-MM-YYYY') }} </p>
+    <p> 🗓 {{ moment(new Date()).format('YYYY-MM-DD') }} </p>
 
     <VRow class="match-height">
 
