@@ -1,10 +1,6 @@
 <script setup>
-import Journal1 from '@/views/dashboards/analytics/Journal1.vue'
-// import Journal2 from '@/views/dashboards/analytics/Journal2.vue'
-// import Journal3 from '@/views/dashboards/analytics/Journal3.vue'
-// import Journal4 from '@/views/dashboards/analytics/Journal4.vue'
-// import Journal5 from '@/views/dashboards/analytics/Journal5.vue'
-// import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
+import { useTheme } from 'vuetify'
+const vuetifyTheme = useTheme()
 </script>
 
 <template>
@@ -15,28 +11,27 @@ import Journal1 from '@/views/dashboards/analytics/Journal1.vue'
 
     <VCardText class="pt-4">
         <VRow>
-          <Journal1 />
+          <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
+            <VCard
+              title= ""
+              subtitle="🥅"
+              class="position-relative">
+              <VCardText :to="{ name: 'post', params: { id: post._id } }">
+                <h4>{{posts.journal_title}}</h4>
+                <a href="timeline"> <Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea></a>
+              </VCardText>
+              <VCardText>
+              <v-btn
+                depressed
+                elevation="2"
+                outlined
+                plain
+                raised
+              >Simpan</v-btn>
+            </VCardText>
+            </VCard>
+          </VCol>
         </VRow>
-<!--         
-        <VRow>
-          <Journal2 />
-        </VRow>
-
-        <VRow>
-          <Journal3 />
-        </VRow>
-
-        <VRow>
-          <Journal4 />
-        </VRow>
-
-        <VRow>
-          <Journal5 />
-        </VRow>
-
-        <VRow>
-          <Journal6 />
-        </VRow> -->
     </VCardText>
   </VCard>
 </template>
@@ -46,3 +41,21 @@ import Journal1 from '@/views/dashboards/analytics/Journal1.vue'
   --v-card-list-gap: 2.625rem;
 }
 </style>
+
+<script>
+import axios from 'axios';
+
+export default {
+  name: 'journal',
+  data(){
+    return {
+      posts: [],
+    }
+  },
+  async created() {
+    axios.get('http://localhost:5000/api/post').then(response => {
+      this.posts = response.data;
+    });
+  }
+}
+</script>
