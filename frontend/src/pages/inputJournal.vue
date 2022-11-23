@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:frontend/src/pages/inputJournal.vue
 <script>
 import axios from 'axios';
 
@@ -16,6 +17,8 @@ export default {
 }
 </script>
 
+=======
+>>>>>>> Stashed changes:frontend/src/pages/journal.vue
 <template>
     <div >
     <VForm @submit.prevent="() => {}">
@@ -96,3 +99,25 @@ export default {
     }
 
 </style>
+
+<script>
+import API from '@/api';
+
+    export default {
+        data() {
+            return {
+                post: {},
+            }
+        },
+        async created(){
+            const response = await API.getPostByID(this.$route.params.id)
+            this.post = response;
+        },
+        methods: {
+            async removePost(id){
+                const response = await API.deletePost(id);
+                this.$router.push( { name: 'home', params: { message: response.message } } )
+            }
+        }
+    }
+</script>
