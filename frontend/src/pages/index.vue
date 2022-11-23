@@ -13,6 +13,7 @@ import moment from 'moment'
     <p>How it is going on?</p>  
     <h2> Today's Journal</h2>
     <p> 🗓 {{ moment(new Date()).format('DD-MM-YYYY') }} </p>
+
     <VRow class="match-height">
 
       <VCol cols="12"  md="8" >
@@ -21,6 +22,21 @@ import moment from 'moment'
 
       <VCol cols="12" md="4">
         <VRow>
+          <VCol cols="12" md="12" >
+            <router-link
+              to ="/add"
+              tag="v-btn"
+              >
+              <v-btn
+                depressed
+                elevation="2"
+                outlined
+                plain
+                raised
+              >+ Add New Journal</v-btn>
+            </router-link>
+          </VCol>
+          
           <VCol cols="12" md="12">
             <Timeline />
           </VCol>
@@ -67,3 +83,9 @@ import moment from 'moment'
 
 </div>
 </template>
+
+<style>
+.button {
+  align :"right"
+}
+</style>
