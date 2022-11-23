@@ -14,7 +14,7 @@ const vuetifyTheme = useTheme()
       class="position-relative">
       <VCardText :to="{ name: 'post', params: { id: post._id } }">
         <h4>{{post.journal_title}}</h4>
-        <a href="timeline"> <Textarea rows="5" cols="15" placeholder="Tulis ceritamu">{{post.content}}</Textarea></a>
+        <a href="timeline"> <Textarea rows="5" cols="15" placeholder="How was my mental state today?">{{post.content}}</Textarea></a>
       </VCardText>
       <VCardText>
       <v-btn

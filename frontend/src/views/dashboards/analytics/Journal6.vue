@@ -11,7 +11,7 @@ const vuetifyTheme = useTheme()
   >
   
     <VCardText>
-      <Textarea v-model="value"  rows="5" cols="15" placeholder="Tulis ceritamu" />
+      <Textarea v-model="value"  rows="5" cols="15" placeholder="How much did i spend today?" />
     </VCardText>
 
     <VCardText>

@@ -11,7 +11,7 @@ const vuetifyTheme = useTheme()
   >
   
     <VCardText>
-      <Textarea v-model="value" :autoresize="true" rows="5" cols="15" placeholder="Tulis ceritamu" />
+      <Textarea v-model="value" :autoresize="true" rows="5" cols="15" placeholder="Any notable things happened today?" />
     </VCardText>
     
     <VCardText>
