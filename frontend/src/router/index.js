@@ -2,6 +2,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import journal from '../views/dashboards/analytics/Journal1.vue'
+import addJournal from '../views/addJournal.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,6 +12,12 @@ const router = createRouter({
       path: '/',
       name: 'journal',
       component: journal
+    },
+
+    {
+      path: '/add',
+      name: 'addJournal',
+      component: addJournal
     },
   ],
   scrollBehavior() {

@@ -34,8 +34,8 @@ module.exports = class API {
 
     static async createPost(req, res) {
         const post = req.body;
-        const imagename = req.file.filename;
-        post.image = imagename;
+        // const imagename = req.file.filename;
+        // post.image = imagename;
         try {
             await Post.create(post)
             res.status(201).json({ message: "Post created successfully!" })
