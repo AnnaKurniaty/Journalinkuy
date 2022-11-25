@@ -15,10 +15,12 @@ const vuetifyTheme = useTheme()
           <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
             <VCard
               subtitle="🥅"
-              class="position-relative">
-              <VCardText :to="{ name: 'timeline', params: { id: post._id } }">
+              class="position-relative"
+              @click="timeline(post._id)"
+              >
+              <VCardText>
                 <h4>{{post.journal_title}}</h4>
-                <a href="timeline"><Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea></a>
+                <Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea>
               </VCardText>
               <VCardText>
               <v-btn
@@ -56,6 +58,19 @@ export default {
     const date = moment(new Date()).format('YYYY-MM-DD');
     this.posts = await API.getPostByDate(date);
     // console.log(response);
+  },
+  methods: {
+    timeline(id){
+      let data = {
+        id: id
+      }
+      console.log(data)
+      // v-bind:to="{ name: 'timeline', params: { id: post._id } }"
+      this.$router.push({
+        name: "timeline", //use name for router push
+        params: { id: id }
+      });
+    }
   }
 }
 </script>

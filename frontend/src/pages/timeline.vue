@@ -3,17 +3,20 @@ import API from '@/api';
 import axios from 'axios';
 
     export default {
-        name : 'timeline',
+        name : 'timelines',
+        props: ['id'],
         data() {
             return {
                 post: {},
             }
         },
         async created(){
-            //const response = await API.getPostByID(this.$route.params.id)
-            axios.get('http://localhost:5000/api/post/id/').then(response => {
-                this.post = response.data;
-            });
+            this.post = await API.getPostByID(this.id);
+        },
+        mounted() {
+            console.log(this.id)
+            console.log(this.$route.params.data)
+            this.id = this.$route.params.id;
         },
         methods: {
             async removePost(id){
@@ -25,7 +28,7 @@ import axios from 'axios';
 </script>
 
 <template>
-    <div >
+    <div :key="post.id">
     <VForm @submit.prevent="() => {}">
         <VRow>
         <VCol

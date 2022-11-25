@@ -17,7 +17,8 @@ import BuyNow from '@core/components/BuyNow.vue'
 
 <template>
   <div id="app">
-      <ckeditor></ckeditor>
+    <!-- <DrawerContent/> -->
+    <ckeditor></ckeditor>
   </div>
 <VApp>
   <VLayout class="layout-wrapper layout-nav-type-vertical">
@@ -25,3 +26,12 @@ import BuyNow from '@core/components/BuyNow.vue'
   </VLayout>
 </VApp>
 </template>
+
+<!-- <script>
+import DrawerContent from './layouts/components/DrawerContent.vue'
+export default {
+  components: {
+    DrawerContent
+  }
+}
+</script> -->
