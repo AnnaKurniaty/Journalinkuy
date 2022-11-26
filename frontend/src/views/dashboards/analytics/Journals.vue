@@ -16,8 +16,7 @@ const vuetifyTheme = useTheme()
             <VCard
               subtitle="🥅"
               class="position-relative"
-              @click="timeline(post._id)"
-              >
+              text :to="{ name:'edit', params: { id: post._id } }">
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
                 <Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea>
@@ -59,18 +58,5 @@ export default {
     this.posts = await API.getPostByDate(date);
     // console.log(response);
   },
-  methods: {
-    timeline(id){
-      let data = {
-        id: id
-      }
-      console.log(data)
-      // v-bind:to="{ name: 'timeline', params: { id: post._id } }"
-      this.$router.push({
-        name: "timeline", //use name for router push
-        params: { id: id }
-      });
-    }
-  }
 }
 </script>

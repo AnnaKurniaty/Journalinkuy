@@ -1,14 +1,13 @@
 <script>
 import API from '@/api';
-import axios from 'axios';
 
     export default {
-        name : 'timeline',
+        name : 'editJournal',
         props: ['id'],
         data() {
             return {
                 post: {
-                    title: "",
+                    journal_title: "",
                     content: "",
                     image: "",
                 },
@@ -27,7 +26,7 @@ import axios from 'axios';
             async updateForm() {
                 const formData = new FormData();
                 formData.append('image', this.image);
-                formData.append('title', this.post.title);
+                formData.append('journal_title', this.post.journal_title);
                 formData.append('content', this.post.content);
                 formData.append('old_image', this.post.image);
                 if(this.$refs.form.validate()){
@@ -44,13 +43,13 @@ import axios from 'axios';
     <VForm ref="form" @submit.prevent="updateForm" enctype="multipart/form-data">
         <VRow>
         <VCol cols="12" md="6" >
-            <VTextField label="Title" v-model="post.title" placeholder="Judul" ></VTextField>
+            <VTextField label="Title" v-model="post.journal_title"></VTextField>
         </VCol>
         <VCol cols="12"  md="6" >
         </VCol>
         <VCol cols="12" md="6" >
             <VTextField>
-                <Textarea rows="5" cols="15" label="Content" v-model="post.content" placeholder="What did i accomplish today?"></Textarea>
+                <Textarea rows="5" cols="15" label="Content" v-model="post.content" ></Textarea>
             </VTextField>
         </VCol>
         <VCol cols="12" md="6" >

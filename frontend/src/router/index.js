@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import journal from '../views/dashboards/analytics/Journals.vue'
 import addJournal from '../views/addJournal.vue'
-import timeline from '../views/dashboards/analytics/Timeline.vue'
+import EditJournal from '../views/editJournal.vue'
 
 
 const router = createRouter({
@@ -22,11 +22,10 @@ const router = createRouter({
       component: addJournal
     },
     {
-      path: '/timeline/:id',
-      name: 'timelines',
-      components: timeline,
-      props: true
-    }
+      path: '/edit/:id',
+      name: 'edit',
+      component: EditJournal
+    },
   ],
   scrollBehavior() {
     return { top: 0 }

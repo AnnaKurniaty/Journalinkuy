@@ -18,7 +18,8 @@ let upload = multer({
 }).single("image")
 
 router.get('/', API.fetchAllPost)
-router.get('/id/:id', API.fetchPostByID)
+// router.get('/id/:id', API.fetchPostByID)
+router.get('/:id', API.fetchPostByID)
 router.get('/date/:created', API.fetchPostByDate)
 router.post('/', upload, API.createPost)
 router.patch('/:id', upload, API.updatePost)

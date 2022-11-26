@@ -6,7 +6,7 @@
                     <v-card-title>Add New Post</v-card-title>
                     <v-divider></v-divider>
                     <v-form ref="form" @submit.prevent="submitForm" class="pa-5" enctype="multipart/form-data">
-                        <v-text-field label="Title" v-model="post.title" prepend-icon="mdi-note" :rules="rules"></v-text-field>
+                        <v-text-field label="Title" v-model="post.journal_title" prepend-icon="mdi-note" :rules="rules"></v-text-field>
                         <v-text-field label="Category" v-model="post.category" prepend-icon="mdi-view-list" :rules="rules"></v-text-field>
                         <v-textarea label="Content" v-model="post.content" prepend-icon="mdi-note-plus" :rules="rules"></v-textarea>
                         <!-- <v-file-input @change="selectFile" :rules="rules" show-size counter multiple label="Select Image"></v-file-input> -->
@@ -26,7 +26,7 @@ import API from '@/api';
             return {
                 rules: [(value)=>!!value || "This field is required"],
                 post: {
-                    title: "",
+                    journal_title: "",
                     category: "",
                     content: "",
                     // image: "",
@@ -45,8 +45,8 @@ import API from '@/api';
                 // formData.append('category', this.post.category);
                 // formData.append('content', this.post.content);
                 const formData ={
-                    image : this.post.title,
-                    title : this.post.category,
+                    journal_title : this.post.journal_title,
+                    category : this.post.category,
                     content : this.post.content
                 }
                 if(this.$refs.form.validate()){

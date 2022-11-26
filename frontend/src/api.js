@@ -8,8 +8,13 @@ export default class API {
         return res.data;
     }
     // to get single post by id
+    // static async getPostByID(id){
+    //     const res = await axios.get(`${url}/id/${id}`);
+    //     return res.data;
+    // }
+    // to get single post by id
     static async getPostByID(id){
-        const res = await axios.get(`${url}/id/${id}`);
+        const res = await axios.get(`${url}/${id}`);
         return res.data;
     }
     static async getPostByDate(created){
