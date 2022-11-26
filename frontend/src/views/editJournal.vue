@@ -48,8 +48,8 @@ import API from '@/api';
         <VCol cols="12"  md="6" >
         </VCol>
         <VCol cols="12" md="6" >
-            <VTextField>
-                <Textarea rows="5" cols="15" label="Content" v-model="post.content" ></Textarea>
+            <VTextField v-model="post.content" >
+                <Textarea rows="5" cols="15" label="Content" ></Textarea>
             </VTextField>
         </VCol>
         <VCol cols="12" md="6" >
@@ -62,7 +62,13 @@ import API from '@/api';
         </VCol>
         
         <VCol cols="12" class="d-flex gap-4" >
-            <VBtn type="submit"> Submit </VBtn>
+            <router-link
+            to ="/"
+            tag="VBtn"
+            >
+                <VBtn type="submit"> Submit </VBtn>
+            </router-link>
+            
             <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
         </VCol>
         </VRow>
