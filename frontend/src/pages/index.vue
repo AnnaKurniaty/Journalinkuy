@@ -12,7 +12,7 @@ import moment from 'moment'
     <h1> Hello, Kurkur 👋</h1>
     <p>How it is going on?</p>  
     <h2> Today's Journal</h2>
-    <p> 🗓 {{ moment(new Date()).format('YYYY-MM-DD') }} </p>
+    <p> 🗓 {{moment(new Date()).format('YYYY-MM-DD')}}</p>
 
     <VRow class="match-height">
 
@@ -94,7 +94,7 @@ import API from '@/api';
           data() {
               return {
                   post: {
-                      journal_title: "",
+                      journal_title: "Today's Mood",
                       content: "",
                       image: "",
                   },
@@ -114,7 +114,8 @@ import API from '@/api';
                   if(this.$refs.form.validate()){
                       const response = await API.addPost(formData);
                       console.log(response);
-                      this.$router.push({ name: 'journals', params: {message: response.message} });
+                      this.$router.push({ name: 'journals', params: {message: response.post.results} });
+                      // .then(response => (this.data= response.data.results))
                   }
               }
           }
