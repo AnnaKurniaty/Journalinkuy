@@ -23,18 +23,16 @@ import moment from 'moment'
       <VCol cols="12" md="4">
         <VRow>
           <VCol cols="12" md="12" >
-            <router-link
-              to ="/add"
-              tag="v-btn"
-              >
+            <v-form ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
               <v-btn
                 depressed
                 elevation="2"
                 outlined
                 plain
                 raised
+                type="submit"
               >+ Add New Journal</v-btn>
-            </router-link>
+            </v-form>
           </VCol>
           
           <VCol cols="12" md="12">
@@ -89,3 +87,36 @@ import moment from 'moment'
   align :"right"
 }
 </style>
+<script>
+import API from '@/api';
+
+  export default {
+          data() {
+              return {
+                  post: {
+                      journal_title: " ",
+                      content: " ",
+                      image: " ",
+                  },
+                  image: " ",
+              }
+          },
+          methods: {
+              selectFile(file){
+                  this.image = file[0];
+              },
+              async submitForm() {
+                  const formData ={
+                      journal_title : this.post.journal_title,
+                      content : this.post.content,
+                      image : this.post.image
+                  }
+                  if(this.$refs.form.validate()){
+                      const response = await API.addPost(formData);
+                      console.log(response);
+                      this.$router.push({ name: 'journals', params: {message: response.message} });
+                  }
+              }
+          }
+      }
+</script>
