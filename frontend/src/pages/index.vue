@@ -94,11 +94,11 @@ import API from '@/api';
           data() {
               return {
                   post: {
-                      journal_title: " ",
-                      content: " ",
-                      image: " ",
+                      journal_title: "",
+                      content: "",
+                      image: "",
                   },
-                  image: " ",
+                  image: "",
               }
           },
           methods: {
