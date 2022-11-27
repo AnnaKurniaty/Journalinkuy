@@ -14,7 +14,7 @@ app.use(express.static('uploads'));
 
 // Database connection
 mongoose
-    .connect('mongodb+srv://journalinKuy:skgB2JtsUmcyJxog@cluster0.g3aq7y0.mongodb.net/?retryWrites=true&w=majority', {
+    .connect('mongodb+srv://journalinKuy:journalinKUY@cluster0.g3aq7y0.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: true,
