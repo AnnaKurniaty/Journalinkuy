@@ -80,13 +80,7 @@ import API from '@/api';
             </VCol>
             </VRow>
         </VForm>
+            </div>
+        </div>
     </div>
-    </div>
-</div>
 </template>
-
-<style>
-.div .editForm{
-    background-color: wheat;
-}
-</style>

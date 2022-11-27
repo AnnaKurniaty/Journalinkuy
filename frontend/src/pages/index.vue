@@ -7,21 +7,17 @@ import moment from 'moment'
 </script>
 
 <template>
-  <div class="container" style="display: flex;">
+<div class="container" style="display: flex;">
   <div class="main"  style="width: 200%; " >
     <h1> Hello, Kurkur 👋</h1>
-    <p>How it is going on?</p>  
-
-    <VRow class="match-height">
-
-      <VCol cols="12"  md="8" >
-        <Journals />
-      </VCol>
-
-      <VCol cols="12" md="4">
-        <VRow>
-          <VCol cols="12" md="12" >
-            <v-form ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
+    <p>How is it going on?</p>
+    <div class="grid-container">
+    <div>
+    <h2> Today's Journal</h2>
+    <p>🗓 {{moment().format("YYYY-MM-DD")}}  </p> 
+  </div>
+  <div>
+    <v-form class="ms" ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
               <v-btn
                 depressed
                 elevation="2"
@@ -29,10 +25,18 @@ import moment from 'moment'
                 plain
                 raised
                 type="submit"
-              >+ Add New Journal</v-btn>
-            </v-form>
-          </VCol>
-          
+              >+ Add Grid Journal</v-btn>
+    </v-form> 
+  </div>
+</div>
+
+    <VRow class="match-height">
+      <VCol class="mt" cols="12"  md="8" >
+        <Journals />
+      </VCol>
+
+      <VCol cols="12" md="4">
+        <VRow>
           <VCol cols="12" md="12">
             <Timeline />
           </VCol>
@@ -43,7 +47,8 @@ import moment from 'moment'
         </VRow>
       </VCol>
     </VRow>
-  </div>
+</div>
+
   <div style="flex-grow: 1; padding: 20px;">
     <div  style="float:left;">
       <UserProfile /> 
@@ -57,9 +62,12 @@ import moment from 'moment'
 
     <div style="position: relative;">
       <h2>Your Journal </h2>
-      <a href="journal"><img src="\src\assets\images\pages\thumbnail.jpg"  style="width:13rem; border-radius: 5%;"></a>
-      <div style="position: absolute;  bottom: 1%;left: 5%;"> 
-        <p style="color:white;"> Open Here </p>
+      <img src="\src\assets\images\pages\thumbnail.jpg"  style="width:13rem; border-radius: 5%;">
+      <div style="position: absolute;  bottom: 10%;left: 5%;"> 
+        <v-btn
+        to ="journal"
+        width = "6rem"
+        >Open Here</v-btn>
       </div>
     </div>
 
@@ -114,3 +122,20 @@ import API from '@/api';
           }
       }
 </script>
+
+<style lang="scss" scoped>
+.ms {
+  margin-left: 7rem !important;
+  margin-top: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.mt{
+  margin-top: -1.5rem;
+}
+</style>

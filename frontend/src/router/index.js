@@ -9,11 +9,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes : [
     ...setupLayouts(routes),
-    {
-      path: '/',
-      name: 'journal',
-      component: journal
-    },
+    // {
+    //   path: '/',
+    //   name: 'journal',
+    //   component: journal
+    // },
     {
       path: '/edit/:id',
       name: 'edit',
