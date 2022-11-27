@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@syncfusion/ej2-vue-calendars": "^20.3.56"
+    "@syncfusion/ej2-vue-calendars": "^20.3.56",
+    "vue-cal": "^4.8.1"
   }
 }

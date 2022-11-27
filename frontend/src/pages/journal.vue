@@ -20,7 +20,7 @@ const vuetifyTheme = useTheme()
         size = 25
         @click="getDate(-1)"
     ></v-btn>
-    🗓  <input 
+    🗓  <input
       size= 6
       v-model="data.date" />
     <v-btn

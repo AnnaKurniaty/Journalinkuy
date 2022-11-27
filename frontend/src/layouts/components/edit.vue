@@ -42,7 +42,7 @@ import API from '@/api';
     <div class="main"  style="width: 100%; " >
     <h1> Edit  Journal ✏</h1>
     <br>
-    <div class="editForm">
+    <div class="inner">
     <div :key="post.id">
         <VForm ref="form" @submit.prevent="updateForm" enctype="multipart/form-data">
             <VRow>
