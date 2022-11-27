@@ -11,8 +11,6 @@ import moment from 'moment'
   <div class="main"  style="width: 200%; " >
     <h1> Hello, Kurkur 👋</h1>
     <p>How it is going on?</p>  
-    <h2> Today's Journal</h2>
-    <p> 🗓 {{moment(new Date()).format('YYYY-MM-DD')}}</p>
 
     <VRow class="match-height">
 
