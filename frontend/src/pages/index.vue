@@ -80,11 +80,6 @@ import moment from 'moment'
 </div>
 </template>
 
-<style>
-.button {
-  align :"right"
-}
-</style>
 <script>
 import API from '@/api';
 
