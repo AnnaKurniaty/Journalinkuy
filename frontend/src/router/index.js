@@ -2,7 +2,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import journal from '../views/dashboards/analytics/Journals.vue'
-import EditJournal from '../views/editJournal.vue'
+import EditJournal from '../pages/editJournal.vue'
 
 
 const router = createRouter({

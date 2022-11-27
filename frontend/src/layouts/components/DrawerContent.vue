@@ -99,7 +99,7 @@ const upgradeBanner = computed(() => {
     /> -->
 
     <!-- 👉 User Interface -->
-    <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" />
+    <!-- <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" /> -->
 
     <!-- <VerticalNavLink
       :item="{
@@ -129,13 +129,13 @@ const upgradeBanner = computed(() => {
         icon: { icon: 'mdi-table' }
       }"
     /> -->
-    <VerticalNavLink
+    <!-- <VerticalNavLink
       :item="{
         title: 'Form Layouts',
         to: 'form-layouts',
         icon: { icon: 'mdi-form-select' }
       }"
-    />
+    /> -->
   </ul>
 
 </template>
