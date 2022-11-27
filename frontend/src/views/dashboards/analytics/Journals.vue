@@ -36,7 +36,7 @@ const vuetifyTheme = useTheme()
               text :to="{ name:'edit', params: { id: post._id } }">
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
-                <Textarea rows="5" cols="15" placeholder="What did i accomplish today?">{{post.content}}</Textarea>
+                <Textarea rows="5" cols="15" placeholder="Type here">{{post.content}}</Textarea>
               </VCardText>
             </VCard>
           </VCol>
