@@ -7,6 +7,14 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 
+// Awal dari perubahan
+
+// Untuk menampilkan pop-up, kita dapat menggunakan Sweetalert2
+// Cara install di terminal : npm install -S vue-sweetalert2
+import Swal from 'sweetalert2'
+
+// Akhir dari perubahan
+
 const Demo = defineComponent({
   components: {
     FullCalendar,
@@ -48,25 +56,56 @@ const Demo = defineComponent({
       this.calendarOptions.weekends = !this.calendarOptions.weekends // update a property
     },
     handleDateSelect(selectInfo: DateSelectArg) {
-      let title = prompt('Please enter a new title for your event')
+      
+      // Awal perubahan
+      // Penambahan Pop-Up untuk Post
+      
       let calendarApi = selectInfo.view.calendar
 
       calendarApi.unselect() // clear date selection
 
-      if (title) {
-        calendarApi.addEvent({
-          id: createEventId(),
-          title,
-          start: selectInfo.startStr,
-          end: selectInfo.endStr,
-          allDay: selectInfo.allDay
-        })
-      }
+      Swal.fire({
+        text: "What event did you attend?:",
+        input: 'text',
+        showCancelButton: true
+        
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //if (result)
+            calendarApi.addEvent({
+              id: createEventId(),
+              title : result.value, // Judul kegiatan yang dihadiri
+              start: selectInfo.startStr,
+              end: selectInfo.endStr,
+              allDay: selectInfo.allDay
+            })
+            
+            Swal.fire({
+  position: 'top',
+  icon: 'success',
+  title: 'Your event has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})
+          }
+});   
+      // Akhir perubahan
     },
-    handleEventClick(clickInfo: EventClickArg) {
-      if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+    handleEventClick(clickInfo: EventClickArg) { // Ketika mengklik suatu event
+    
+      // Awal perubahan
+      // Penambahan Pop-Up untuk Delete
+    
+      Swal.fire({
+  position: 'top',
+  icon: 'success',
+  title: 'Your event has been deleted!',
+  showConfirmButton: false,
+  timer: 1500
+})
         clickInfo.event.remove()
-      }
+        
+        // Akhir perubahan
     },
     handleEvents(events: EventApi[]) {
       this.currentEvents = events
