@@ -39,6 +39,7 @@
     "vue-media-upload": "^1.1.4",
     "vue-prism-component": "^2.0.0",
     "vue-router": "^4.1.5",
+    "vue-sweetalert2": "^5.0.5",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0",
     "vuetify": "^3.0.0-beta.11",

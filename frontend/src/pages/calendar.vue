@@ -65,7 +65,7 @@ const Demo = defineComponent({
       calendarApi.unselect() // clear date selection
 
       Swal.fire({
-        text: "What event did you attend?:",
+        text: "Please enter a new title for your event",
         input: 'text',
         showCancelButton: true
         

@@ -115,7 +115,7 @@ import moment from 'moment'
           formData.append('story', this.timelines.story);
           formData.append('created', this.timelines.created);
           const response = await APIT.addTimeline(formData);
-          console.log(response);
+          window.location.reload();
      
           this.timelines.events.push({
             id: this.timelines.nonce++,
@@ -127,6 +127,7 @@ import moment from 'moment'
         },
         async removeTimeline(id){
                 const response = await APIT.deleteTimeline(id);
+                window.location.reload();
             },
       },
     }
