@@ -15,9 +15,9 @@ import moment from 'moment'
     <div>
     <h2> Today's Journal</h2>
     <p>🗓 {{moment().format("YYYY-MM-DD")}}  </p> 
-  </div>
-  <div>
-    <v-form class="ms" ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
+     </div>
+  <div class="right">
+    <v-form  ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
               <v-btn
                 depressed
                 elevation="2"
@@ -124,15 +124,15 @@ import API from '@/api';
 </script>
 
 <style lang="scss" scoped>
-.ms {
-  margin-left: 7rem !important;
-  margin-top: 1rem;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+}
+
+.right {
+    text-align: right;
+    align-self: center;
 }
 
 .mt{

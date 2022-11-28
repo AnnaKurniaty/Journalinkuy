@@ -13,8 +13,10 @@ const vuetifyTheme = useTheme()
             <p style="color:white;"> Look what you've been through </p>
         </div>
     </div>
-        <h1> Journals 📖 </h1>
-  <div> 
+        
+<div class="grid-container">
+  <div>
+    <h1> Journals 📖 </h1>
    <v-btn
         icon="mdi-chevron-left"
         size = 25
@@ -28,11 +30,16 @@ const vuetifyTheme = useTheme()
         size = 25
         @click="getDate(1)"
     ></v-btn>
+  </div>
+
+  <div class="right" >
     <v-btn
-        class="ms" 
         @click="todayDate()"
     >Today</v-btn>
   </div>
+
+</div>
+
   <br>
   <VCard>
     <VCardText class="pt-4">
@@ -49,7 +56,7 @@ const vuetifyTheme = useTheme()
             </VCard>
           </VCol>
         </VRow>
-    </VCardText>
+      </VCardText>
   </VCard>
   </div>
 </template>
@@ -58,8 +65,15 @@ const vuetifyTheme = useTheme()
 .card-list {
   --v-card-list-gap: 2.625rem;
 }
-.ms {
-  margin-left: 39rem !important;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.right {
+    text-align: right;
+    align-self: flex-end;
 }
 </style>
 
