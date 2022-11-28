@@ -17,7 +17,7 @@ import moment from 'moment'
     <p>🗓 {{moment().format("YYYY-MM-DD")}}  </p> 
      </div>
   <div class="right">
-    <v-form  ref="form" @submit.prevent="submitForm" enctype="multipart/form-data">
+    <v-form  ref="form" @submit.onclick="submitForm" enctype="multipart/form-data">
               <v-btn
                 depressed
                 elevation="2"

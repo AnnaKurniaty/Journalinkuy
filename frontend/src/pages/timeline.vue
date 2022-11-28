@@ -27,7 +27,7 @@ import moment from 'moment'
           color="primary"
           large
         >
-        <v-form ref="form" @submit.prevent="submitForms" enctype="multipart/form-data">
+        <v-form ref="form" @submit.ponclick="submitForms" enctype="multipart/form-data">
           <v-text-field
             v-model = "timelines.story"
             hide-details
