@@ -27,7 +27,7 @@ import moment from 'moment'
           color="primary"
           large
         >
-        <v-form ref="form" @submit.onclick="submitForms" enctype="multipart/form-data">
+       
           <v-text-field
             v-model = "timelines.story"
             hide-details
@@ -35,39 +35,48 @@ import moment from 'moment'
             label="Leave a story..."
             solo
             @keydown.enter="comment"
+            ref="form"
           >
             <template v-slot:append>
               <v-btn
                 class="mx-0"
                 depressed
-                type="submit"
                 @click="comment"
+                ref="form"
               >
                 Post
               </v-btn>
             </template>
           </v-text-field>
-        </v-form>
+      
         </v-timeline-item>
   
         <v-slide-x-transition
           group
         >
           <v-timeline-item
+            v-for="event in timeline"
+            :key="event.id"
             class="mb-4"
             color="pink"
             small
           >
-            <v-row justify="space-between" v-for="(timeline) in timelines" :key="timeline._id">
+            <v-row justify="space-between">
               <v-col
                 cols="7"
-                v-text="timeline.story"
+                v-text="event.story"
               ></v-col>
               <v-col
                 class="text-right"
                 cols="5"
-                v-text="timeline.created"
+                v-text="event.created"
               ></v-col>
+              <v-col
+                class="text-right"
+                cols="5"
+              >
+              <v-btn color="red" @click="removeTimeline(event._id)">Delete</v-btn>
+            </v-col>
             </v-row>
           </v-timeline-item>
         </v-slide-x-transition>
@@ -84,50 +93,46 @@ import moment from 'moment'
       data() {
               return {
                   timelines: {
-                      story: "",
+                      story: null,
+                      created:moment().format("YYYY-MM-DD HH:mm:ss"),
+                      events:[],
+                      nonce:0,
                   },
               }
           },
-  
+     async created() {
+       this.timelines.events = await APIT.getAllTimelines();
+     },
       computed: {
         timeline () {
-          return this.timelines.slice().reverse()
+          return this.timelines.events.slice().reverse()
         },
       },
   
       methods: {
-        comment () {
-          const time = (new Date()).toTimeString()
-          this.events.push({
-            id: this.nonce++,
+        async comment () {
+          const formData = new FormData();
+          formData.append('story', this.timelines.story);
+          formData.append('created', this.timelines.created);
+          const response = await APIT.addTimeline(formData);
+          console.log(response);
+     
+          this.timelines.events.push({
+            id: this.timelines.nonce++,
             story: this.timelines.story,
-            time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
-              return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
-            }),
+            created:this.timelines.created,
           })
   
-          this.input = null
+          this.timelines.story = null
         },
-        async submitForms() {
-                const formData = new FormData();
-                formData.append('story', this.timelines.story);
-                  if(this.$refs.form.validate()){
-                      const response = await APIT.addTimeline(formData);
-                      console.log(response);
-                  }
-              }
+        async removeTimeline(id){
+                const response = await APIT.deleteTimeline(id);
+            },
       },
-      async created() {
-      this.timelines = await APIT.getAllTimelines();
-    }
     }
   </script>
 
 <style>
-.color{
-    color:white;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;

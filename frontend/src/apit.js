@@ -22,4 +22,9 @@ export default class APIT {
         const res = await axios.post(url, timeline);
         return res.data;
     }
+    // to delete a timeline
+    static async deleteTimeline(id){
+        const res = await axios.delete(`${url}/${id}`);
+        return res.data;
+    }
 }
