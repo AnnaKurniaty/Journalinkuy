@@ -53,6 +53,18 @@ module.exports = class APIE {
         }
     }
 
+    static async updateEvent(req, res) {
+        const id = req.params.id;
+        const newEvent = req.body;
+
+        try {
+            await Post.findByIdAndUpdate(id, newEvent);
+            res.status(200).json({ message: "Event updated successfully!" })
+        } catch (error) {
+            res.status(404).json({ message: error.message })
+        }
+    }
+
     static async deleteEvent(req, res) {
         const id = req.params.id;
         try {
