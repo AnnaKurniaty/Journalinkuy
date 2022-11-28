@@ -34,16 +34,16 @@ const isPasswordVisible = ref(false)
         </template>
 
         <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Materio
+          Journalinkuy
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Adventure starts here 🚀
+          Journey starts here 🚀
         </h5>
         <p class="mb-0">
-          Make your app management easy and fun!
+          Make your own journal, easy and fun!
         </p>
       </VCardText>
 
