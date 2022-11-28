@@ -52,6 +52,7 @@ const vuetifyTheme = useTheme()
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
                 <Textarea rows="5" cols="48" placeholder="Type here">{{post.content}}</Textarea>
+                <v-btn color="red" text @click="removePost(post._id)">Delete</v-btn>
               </VCardText>
             </VCard>
           </VCol>
@@ -106,7 +107,11 @@ export default {
               async todayDate(){
                 this.data.date = moment().format("YYYY-MM-DD")
                 this.posts = await API.getPostByDate(this.data.date);
-              }
+              },
+              async removePost(id){
+                const response = await API.deletePost(id);
+                this.$router.push( { name: 'home', params: { message: response.message } } )
+            },
             }
 }
 </script>
