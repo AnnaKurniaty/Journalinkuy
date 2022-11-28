@@ -17,7 +17,6 @@ import API from '@/api';
         async created() {
             const response = await API.getPostByID(this.$route.params.id);
             this.post = response;
-
         },
         methods: {
             selectFile(file){
@@ -73,7 +72,7 @@ import API from '@/api';
                 to ="/"
                 tag="VBtn"
                 >
-                    <VBtn type="submit"> Submit </VBtn>
+                    <VBtn type="submit" @click="updateForm()"> Submit </VBtn>
                 </router-link>
                 
                 <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
