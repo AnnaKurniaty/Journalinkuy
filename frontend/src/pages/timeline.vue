@@ -34,12 +34,14 @@ import moment from 'moment'
             flat
             label="Leave a story..."
             solo
+            @keydown.enter="comment"
           >
             <template v-slot:append>
               <v-btn
                 class="mx-0"
                 depressed
                 type="submit"
+                @click="comment"
               >
                 Post
               </v-btn>
@@ -59,11 +61,13 @@ import moment from 'moment'
             <v-row justify="space-between" v-for="(timeline) in timelines" :key="timeline._id">
               <v-col
                 cols="7"
-              >{{timeline.story}}</v-col>
+                v-text="timeline.story"
+              ></v-col>
               <v-col
                 class="text-right"
                 cols="5"
-              >{{timeline.created}}</v-col>
+                v-text="timeline.created"
+              ></v-col>
             </v-row>
           </v-timeline-item>
         </v-slide-x-transition>
@@ -87,7 +91,7 @@ import moment from 'moment'
   
       computed: {
         timeline () {
-          return this.events.slice().reverse()
+          return this.timelines.slice().reverse()
         },
       },
   
@@ -96,7 +100,7 @@ import moment from 'moment'
           const time = (new Date()).toTimeString()
           this.events.push({
             id: this.nonce++,
-            text: this.input,
+            story: this.timelines.story,
             time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
               return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
             }),
