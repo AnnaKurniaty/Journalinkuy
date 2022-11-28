@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const API = require('../controllers/api');
 const APIE = require('../controllers/events_api');
+const APIT = require('../controllers/timelines_api');
 const multer = require('multer');
 
 // multer middleware
@@ -29,4 +30,8 @@ router.get('/:id', APIE.fetchEventByID)
 router.get('/date/:created', APIE.fetchEventByDate)
 router.post('/calendar/', upload, APIE.createEvent)
 router.delete('/calendar/:id', APIE.deleteEvent)
+router.get('/timeline/', APIT.fetchAllTimelines)
+router.get('/timeline/:id', APIT.fetchTimelineByID)
+router.post('/timeline/', upload, APIT.createTimeline)
+router.delete('/timeline/:id', APIT.deleteTimeline)
 module.exports = router;

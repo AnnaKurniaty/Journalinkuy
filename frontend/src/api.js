@@ -31,14 +31,4 @@ export default class API {
         const res = await axios.delete(`${url}/${id}`);
         return res.data;
     }
-    // to get all the event from the server
-    static async getAllEvents(){
-        const res = await axios.get(url);
-        return res.data;
-    }
-    // to get single event by id
-    static async getEventByID(id){
-        const res = await axios.get(`${url}/${id}`);
-        return res.data;
-    }
 }

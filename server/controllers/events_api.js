@@ -1,7 +1,7 @@
 const event = require('../models/events');
 const fs = require('fs');
 
-module.exports = class API {
+module.exports = class APIE {
     // fetch all events
     static async fetchAllEvents(req, res) {
         try {

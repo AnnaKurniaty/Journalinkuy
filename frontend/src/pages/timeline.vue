@@ -27,32 +27,31 @@ import moment from 'moment'
           color="primary"
           large
         >
+        <v-form ref="form" @submit.prevent="submitForms" enctype="multipart/form-data">
           <v-text-field
-            v-model="input"
+            v-model = "timelines.story"
             hide-details
             flat
             label="Leave a story..."
             solo
-            @keydown.enter="comment"
           >
             <template v-slot:append>
               <v-btn
                 class="mx-0"
                 depressed
-                @click="comment"
+                type="submit"
               >
                 Post
               </v-btn>
             </template>
           </v-text-field>
+        </v-form>
         </v-timeline-item>
   
         <v-slide-x-transition
           group
         >
           <v-timeline-item
-            v-for="event in timeline"
-            :key="event.id"
             class="mb-4"
             color="pink"
             small
@@ -60,12 +59,10 @@ import moment from 'moment'
             <v-row justify="space-between">
               <v-col
                 cols="7"
-                v-text="event.text"
               ></v-col>
               <v-col
                 class="text-right"
                 cols="5"
-                v-text="event.time"
               ></v-col>
             </v-row>
           </v-timeline-item>
@@ -84,8 +81,6 @@ import moment from 'moment'
       >
         <span class="color" >you are loved you are loved you are loved you are loved you are loved you are loved you are loved you are loved</span>
       </v-timeline-item>
-
-
       </v-timeline>
     </v-container>
 </div>
@@ -93,12 +88,16 @@ import moment from 'moment'
 </template>
   
   <script>
+  import APIT from '@/apit';
     export default {
-      data: () => ({
-        events: [],
-        input: null,
-        nonce: 0,
-      }),
+      name : 'addTimeline',
+      data() {
+              return {
+                  timelines: {
+                      story: "",
+                  },
+              }
+          },
   
       computed: {
         timeline () {
@@ -107,18 +106,27 @@ import moment from 'moment'
       },
   
       methods: {
-        comment () {
-          const time = (new Date()).toTimeString()
-          this.events.push({
-            id: this.nonce++,
-            text: this.input,
-            time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
-              return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
-            }),
-          })
+        // comment () {
+        //   const time = (new Date()).toTimeString()
+        //   this.events.push({
+        //     id: this.nonce++,
+        //     text: this.input,
+        //     time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
+        //       return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
+        //     }),
+        //   })
   
-          this.input = null
-        },
+        //   this.input = null
+        // },
+        async submitForms() {
+                  const formData ={
+                    story : this.timelines.story
+                  }
+                  if(this.$refs.form.validate()){
+                      const response = await APIT.addTimeline(formData);
+                      console.log(response);
+                  }
+              }
       },
     }
   </script>

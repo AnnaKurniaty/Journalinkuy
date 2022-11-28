@@ -116,7 +116,6 @@ import API from '@/api';
                       const response = await API.addPost(formData);
                       console.log(response);
                       this.$router.push({ name: 'journals', params: {message: response.post.results} });
-                      // .then(response => (this.data= response.data.results))
                   }
               }
           }
