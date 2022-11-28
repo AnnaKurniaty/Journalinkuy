@@ -56,31 +56,17 @@ import moment from 'moment'
             color="pink"
             small
           >
-            <v-row justify="space-between">
+            <v-row justify="space-between" v-for="(timeline) in timelines" :key="timeline._id">
               <v-col
                 cols="7"
-              ></v-col>
+              >{{timeline.story}}</v-col>
               <v-col
                 class="text-right"
                 cols="5"
-              ></v-col>
+              >{{timeline.created}}</v-col>
             </v-row>
           </v-timeline-item>
         </v-slide-x-transition>
-
-        <v-timeline-item
-        class="mb-6"
-        hide-dot
-      >
-        <span class="color">----------------------------------------------------------------------------------------------------------</span>
-      </v-timeline-item>
-
-      <v-timeline-item
-        class="mb-6"
-        hide-dot
-      >
-        <span class="color" >you are loved you are loved you are loved you are loved you are loved you are loved you are loved you are loved</span>
-      </v-timeline-item>
       </v-timeline>
     </v-container>
 </div>
@@ -106,28 +92,30 @@ import moment from 'moment'
       },
   
       methods: {
-        // comment () {
-        //   const time = (new Date()).toTimeString()
-        //   this.events.push({
-        //     id: this.nonce++,
-        //     text: this.input,
-        //     time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
-        //       return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
-        //     }),
-        //   })
+        comment () {
+          const time = (new Date()).toTimeString()
+          this.events.push({
+            id: this.nonce++,
+            text: this.input,
+            time: time.replace(/:\d{2}\sGMT-\d{4}\s\((.*)\)/, (match, contents, offset) => {
+              return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
+            }),
+          })
   
-        //   this.input = null
-        // },
+          this.input = null
+        },
         async submitForms() {
-                  const formData ={
-                    story : this.timelines.story
-                  }
+                const formData = new FormData();
+                formData.append('story', this.timelines.story);
                   if(this.$refs.form.validate()){
                       const response = await APIT.addTimeline(formData);
                       console.log(response);
                   }
               }
       },
+      async created() {
+      this.timelines = await APIT.getAllTimelines();
+    }
     }
   </script>
 

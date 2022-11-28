@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const API = require('../controllers/api');
+const APIT = require('../controllers/timelines_api');
 const multer = require('multer');
 
 // multer middleware
@@ -17,10 +17,8 @@ let upload = multer({
     storage: storage,
 }).single("image")
 
-router.get('/', API.fetchAllPost)
-router.get('/:id', API.fetchPostByID)
-router.get('/date/:created', API.fetchPostByDate)
-router.post('/', upload, API.createPost)
-router.patch('/:id', upload, API.updatePost)
-router.delete('/:id', API.deletePost)
+router.get('/', APIT.fetchAllTimelines)
+router.get('/:id', APIT.fetchTimelineByID)
+router.post('/', upload, APIT.createTimeline)
+router.delete('/:id', APIT.deleteTimeline)
 module.exports = router;

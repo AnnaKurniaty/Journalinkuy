@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = 'http://localhost:5000/api/post';
+const url = 'http://localhost:5000/api/timelines';
 
 export default class APIT {
     // to get all the event from the server

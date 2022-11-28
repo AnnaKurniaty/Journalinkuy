@@ -25,6 +25,7 @@ mongoose
 
 // routes prefix
 app.use("/api/post", require('./routes/routes'))
+app.use("/api/timelines", require('./routes/routesT'))
 
 // Start server
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
