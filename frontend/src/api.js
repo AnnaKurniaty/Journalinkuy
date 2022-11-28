@@ -8,11 +8,6 @@ export default class API {
         return res.data;
     }
     // to get single post by id
-    // static async getPostByID(id){
-    //     const res = await axios.get(`${url}/id/${id}`);
-    //     return res.data;
-    // }
-    // to get single post by id
     static async getPostByID(id){
         const res = await axios.get(`${url}/${id}`);
         return res.data;
@@ -34,6 +29,16 @@ export default class API {
     // to delete a post
     static async deletePost(id){
         const res = await axios.delete(`${url}/${id}`);
+        return res.data;
+    }
+    // to get all the event from the server
+    static async getAllEvents(){
+        const res = await axios.get(url);
+        return res.data;
+    }
+    // to get single event by id
+    static async getEventByID(id){
+        const res = await axios.get(`${url}/${id}`);
         return res.data;
     }
 }

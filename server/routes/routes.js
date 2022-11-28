@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const API = require('../controllers/api');
+const APIE = require('../controllers/events_api');
 const multer = require('multer');
 
 // multer middleware
@@ -18,11 +19,14 @@ let upload = multer({
 }).single("image")
 
 router.get('/', API.fetchAllPost)
-// router.get('/id/:id', API.fetchPostByID)
 router.get('/:id', API.fetchPostByID)
 router.get('/date/:created', API.fetchPostByDate)
 router.post('/', upload, API.createPost)
 router.patch('/:id', upload, API.updatePost)
 router.delete('/:id', API.deletePost)
-
+router.get('/calendar/', APIE.fetchAllEvents)
+router.get('/:id', APIE.fetchEventByID)
+router.get('/date/:created', APIE.fetchEventByDate)
+router.post('/calendar/', upload, APIE.createEvent)
+router.delete('/calendar/:id', APIE.deleteEvent)
 module.exports = router;
