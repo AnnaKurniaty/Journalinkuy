@@ -81,12 +81,12 @@ const Demo = defineComponent({
             })
             
             Swal.fire({
-  position: 'top',
-  icon: 'success',
-  title: 'Your event has been saved',
-  showConfirmButton: false,
-  timer: 1500
-})
+              position: 'top',
+              icon: 'success',
+              title: 'Your event has been saved',
+              showConfirmButton: false,
+              timer: 1500,
+            })
           }
 });   
       // Akhir perubahan
@@ -97,12 +97,12 @@ const Demo = defineComponent({
       // Penambahan Pop-Up untuk Delete
     
       Swal.fire({
-  position: 'top',
-  icon: 'success',
-  title: 'Your event has been deleted!',
-  showConfirmButton: false,
-  timer: 1500
-})
+        position: 'top',
+        icon: 'success',
+        title: 'Your event has been deleted!',
+        showConfirmButton: false,
+        timer: 1500
+      })
         clickInfo.event.remove()
         
         // Akhir perubahan

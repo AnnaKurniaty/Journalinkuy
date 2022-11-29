@@ -110,7 +110,7 @@ export default {
               },
               async removePost(id){
                 const response = await API.deletePost(id);
-                this.$router.push( { name: 'home', params: { message: response.message } } )
+                this.$router.push( { name: 'journal', params: { message: response.message } } )
             },
             }
 }
