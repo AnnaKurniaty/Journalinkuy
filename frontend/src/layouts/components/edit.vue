@@ -61,22 +61,19 @@ import API from '@/api';
             <VCol cols="12" md="15" >
     <!-- 
             <input type="file" @change="onFileChanged"> -->
-            <v-file-input @change="selectFile" :rules="rules" show-size counter multiple label="Select Image"></v-file-input>
-                    <v-img :src="`/${post.image}`" width="120"></v-img>
+            <!-- <v-file-input @change="selectFile" :rules="rules" show-size counter multiple label="Select Image"></v-file-input>
+                    <v-img :src="`/${post.image}`" width="120"></v-img> -->
             </VCol>
             
             <VCol cols="12" class="d-flex gap-4" >
+                <router-link
+                    to ="/"
+                    tag="VBtn"
+                >
+                    <VBtn type="submit" @click="updateForm()"> ACCEPT </VBtn>
+                </router-link>
+                <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
                 <v-row justify="center">
-
-                    <v-btn
-                        color="primary"
-                        class="ma-2"
-                        dark
-                        @click="dialog3 = true"
-                    >
-                        a
-                    </v-btn>
-
                     <v-menu
                         bottom
                         offset-x
@@ -163,17 +160,10 @@ import API from '@/api';
                         </v-card-title>
 
                         <v-card-actions>
-                            <router-link
-                                to ="/"
-                                tag="VBtn"
-                                >
-                                    <VBtn type="submit" @click="updateForm()"> ACCEPT </VBtn>
-                                </router-link>
                         </v-card-actions>
                         </v-card>
                     </v-dialog>
                     </v-row>
-                <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
             </VCol>
             </VRow>
         </VForm>
