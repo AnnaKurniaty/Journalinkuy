@@ -66,13 +66,113 @@ import API from '@/api';
             </VCol>
             
             <VCol cols="12" class="d-flex gap-4" >
-                <router-link
-                to ="/"
-                tag="VBtn"
-                >
-                    <VBtn type="submit" @click="updateForm()"> Submit </VBtn>
-                </router-link>
-                
+                <v-row justify="center">
+
+                    <v-btn
+                        color="primary"
+                        class="ma-2"
+                        dark
+                        @click="dialog3 = true"
+                    >
+                        a
+                    </v-btn>
+
+                    <v-menu
+                        bottom
+                        offset-x
+                    >
+                    </v-menu>
+
+                    <v-dialog
+                        v-model="dialog"
+                        fullscreen
+                        hide-overlay
+                        transition="dialog-bottom-transition"
+                        scrollable
+                    >
+                        <v-card tile>
+                        <v-toolbar
+                            flat
+                            dark
+                            color="primary"
+                        >
+                            <v-btn
+                            icon
+                            dark
+                            @click="dialog = false"
+                            >
+                            <v-icon>mdi-close</v-icon>
+                            </v-btn>
+                            <v-toolbar-title>Settings</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                            <v-toolbar-items>
+                            <v-btn
+                                dark
+                                text
+                                @click="dialog = false"
+                            >
+                                Save
+                            </v-btn>
+                            </v-toolbar-items>
+                            <v-menu
+                            bottom
+                            right
+                            offset-y
+                            >
+                            </v-menu>
+                        </v-toolbar>
+                        
+                        <v-card-text>
+                            <v-btn
+                            color="primary"
+                            dark
+                            @click="dialog3 = !dialog3"
+                            >
+                            SAVE
+                            </v-btn>
+                            <v-select
+                            :items="select"
+                            label="A Select List"
+                            item-value="text"
+                            ></v-select>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-btn
+                            color="primary"
+                            text
+                            @click="dialog2 = false"
+                            >
+                            </v-btn>
+                        </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
+                    <v-dialog
+                        v-model="dialog3"
+                        max-width="500px"
+                    >
+                        <v-card>
+                        <v-card-title>
+                            <span>Great! Now you can have a coffee.</span>
+                            <v-spacer></v-spacer>
+                            <v-menu
+                            bottom
+                            left
+                            >
+                            </v-menu>
+                        </v-card-title>
+
+                        <v-card-actions>
+                            <router-link
+                                to ="/"
+                                tag="VBtn"
+                                >
+                                    <VBtn type="submit" @click="updateForm()"> ACCEPT </VBtn>
+                                </router-link>
+                        </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                    </v-row>
                 <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
             </VCol>
             </VRow>
