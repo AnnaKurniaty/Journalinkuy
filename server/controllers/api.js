@@ -67,7 +67,7 @@ module.exports = class API {
         //     new_image = req.body.old_image;
         // }
 
-        // const newPost = req.body;
+        const newPost = req.body;
         // newPost.image = new_image;
 
         try {

@@ -6,7 +6,6 @@ import API from '@/api';
         props: ['id'],
         data() {
             return {
-                rules : [(value)=>!!value || "This field is required"],
                 post: {
                     journal_title: "",
                     content: "",
@@ -20,17 +19,19 @@ import API from '@/api';
             this.post = response;
         },
         methods: {
-            selectFile(file){
-                this.image = file[0];
-            },
+            // selectFile(file){
+            //     this.image = file[0];
+            // },
             async updateForm() {
                 const formData = new FormData();
-                formData.append('image', this.image);
+                //formData.append('image', this.image);
                 formData.append('journal_title', this.post.journal_title);
                 formData.append('content', this.post.content);
-                formData.append('old_image', this.post.image);
+                //formData.append('old_image', this.post.image);
+                console.log(formData);
                 if(this.$refs.form.validate()){
                     const response = await API.updatePost(this.$route.params.id, formData);
+                    console.log(response);
                     this.$router.push({ name: 'home', params: {message: response.message} });
                 }
             }
@@ -44,13 +45,13 @@ import API from '@/api';
     <br>
     <div class="inner">
     <div :key="post.id">
-        <VForm ref="form" @submit.prevent="updateForm" enctype="multipart/form-data">
+        <VForm ref="form"  enctype="multipart/form-data">
             <VRow>
             <VCol cols="12" md="15" >
-                <VTextField label="Title" v-model="post.journal_title" :rules="rules"></VTextField>
+                <VTextField label="Title" v-model="post.journal_title"></VTextField>
             </VCol>
             <VCol cols="12" md="15" >
-                <v-textarea label="Content" v-model = "post.content" :rules="rules">
+                <v-textarea label="Content" v-model = "post.content">
                 <template v-slot:label>
                     <div> Content </div>
                 </template>
