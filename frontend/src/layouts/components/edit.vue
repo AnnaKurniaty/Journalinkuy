@@ -52,9 +52,7 @@ import API from '@/api';
             <VCol cols="12" md="15" >
                 <v-textarea label="Content" v-model = "post.content" :rules="rules">
                 <template v-slot:label>
-                    <div>
-                    Content
-                    </div>
+                    <div> Content </div>
                 </template>
                 </v-textarea>
             </VCol>
