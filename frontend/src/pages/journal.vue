@@ -41,7 +41,7 @@ const vuetifyTheme = useTheme()
 </div>
 
   <br>
-  <VCard>
+  <VCard class="scroll" height="50rem">
     <VCardText class="pt-4">
         <VRow>
           <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
@@ -76,6 +76,11 @@ const vuetifyTheme = useTheme()
     text-align: right;
     align-self: flex-end;
 }
+
+.scroll {
+  overflow-y: scroll;
+}
+
 </style>
 
 <script>

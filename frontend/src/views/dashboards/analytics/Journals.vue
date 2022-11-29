@@ -6,7 +6,7 @@ const vuetifyTheme = useTheme()
 
 <template>
   <br>
-  <VCard>
+  <VCard class="scroll" height="44rem">
     <VCardText class="pt-4">
         <VRow>
           <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
@@ -28,6 +28,9 @@ const vuetifyTheme = useTheme()
 <style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 2.625rem;
+}
+.scroll {
+  overflow-y: scroll;
 }
 </style>
 
