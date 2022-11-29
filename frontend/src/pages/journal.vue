@@ -51,7 +51,6 @@ const vuetifyTheme = useTheme()
               text :to="{ name:'edit', params: { id: post._id } }">
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
-                <v-img height="250" :src="`/${post.image}`"></v-img>
                 <Textarea rows="5" cols="48" placeholder="Type here">{{post.content}}</Textarea>
                 <v-btn color="red" text @click="removePost(post._id)">Delete</v-btn>
               </VCardText>
@@ -95,7 +94,6 @@ export default {
   async created() {
     // const date = this.data.date
     this.posts = await API.getPostByDate(this.data.date);
-    // console.log(response);
   },
   methods: {
               async getDate(days) {

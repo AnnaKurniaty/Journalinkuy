@@ -127,7 +127,7 @@ import moment from 'moment'
         },
         async removeTimeline(id){
                 const response = await APIT.deleteTimeline(id);
-                this.$router.push( { name: 'addTimeline', params: { message: response.message } } );
+                window.location.reload();
             },
       },
     }

@@ -47,10 +47,10 @@ import API from '@/api';
         <VForm ref="form" @submit.prevent="updateForm" enctype="multipart/form-data">
             <VRow>
             <VCol cols="12" md="15" >
-                <VTextField label="Title" v-model="post.journal_title"></VTextField>
+                <VTextField label="Title" v-model="post.journal_title" :rules="rules"></VTextField>
             </VCol>
             <VCol cols="12" md="15" >
-                <v-textarea label="Content" v-model = "post.content">
+                <v-textarea label="Content" v-model = "post.content" :rules="rules">
                 <template v-slot:label>
                     <div>
                     Content
@@ -61,7 +61,7 @@ import API from '@/api';
             <VCol cols="12" md="15" >
     <!-- 
             <input type="file" @change="onFileChanged"> -->
-            <v-file-input @change="selectFile" show-size counter multiple label="Select Image"></v-file-input>
+            <v-file-input @change="selectFile" :rules="rules" show-size counter multiple label="Select Image"></v-file-input>
                     <v-img :src="`/${post.image}`" width="120"></v-img>
             </VCol>
             
