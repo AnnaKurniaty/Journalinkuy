@@ -6,6 +6,7 @@ import API from '@/api';
         props: ['id'],
         data() {
             return {
+                rules : [(value)=>!!value || "This field is required"],
                 post: {
                     journal_title: "",
                     content: "",
@@ -49,10 +50,7 @@ import API from '@/api';
                 <VTextField label="Title" v-model="post.journal_title"></VTextField>
             </VCol>
             <VCol cols="12" md="15" >
-                <v-textarea
-                label="Content" 
-                v-model = "post.content"
-                >
+                <v-textarea label="Content" v-model = "post.content">
                 <template v-slot:label>
                     <div>
                     Content

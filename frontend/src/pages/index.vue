@@ -18,14 +18,14 @@ import moment from 'moment'
      </div>
   <div class="right">
     <v-form  ref="form" @submit.onclick="submitForm" enctype="multipart/form-data">
-              <v-btn
-                depressed
-                elevation="2"
-                outlined
-                plain
-                raised
-                type="submit"
-              >+ Add Grid Journal</v-btn>
+      <v-btn
+        depressed
+        elevation="2"
+        outlined
+        plain
+        raised
+        type="submit"
+          >+ Add Grid Journal</v-btn>
     </v-form> 
   </div>
 </div>
