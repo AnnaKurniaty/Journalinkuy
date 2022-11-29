@@ -103,14 +103,14 @@ import API from '@/api';
               }
           },
           methods: {
-              selectFile(file){
-                  this.image = file[0];
-              },
+              // selectFile(file){
+              //     this.image = file[0];
+              // },
               async submitForm() {
                   const formData ={
                       journal_title : this.post.journal_title,
                       content : this.post.content,
-                      image : this.post.image
+                      // image : this.post.image
                   }
                   if(this.$refs.form.validate()){
                       const response = await API.addPost(formData);
