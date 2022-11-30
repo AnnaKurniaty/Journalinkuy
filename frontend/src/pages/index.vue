@@ -112,10 +112,21 @@ import API from '@/api';
                       content : this.post.content,
                       // image : this.post.image
                   }
-                  if(this.$refs.form.validate()){
+                  let time;
+          
+                  Swal.fire( 'You Added New Journal!', 'Now you can write your journal', 'success');
+                  time = 0;
+
+                  while (time < 4000000){
+                    time++;
+                  }
+
+                  if(time = 4000000){
+                    if(this.$refs.form.validate()){
                       const response = await API.addPost(formData);
                       console.log(response);
                       this.$router.push({ name: 'journals', params: {message: response.post.results} });
+                  }
                   }
               }
           }
