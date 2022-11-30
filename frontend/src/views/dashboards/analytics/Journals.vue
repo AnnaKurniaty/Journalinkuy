@@ -13,8 +13,9 @@ const vuetifyTheme = useTheme()
             <VCard
               subtitle="📌"
               class="position-relative"
-              text :to="{ name:'edit', params: { id: post._id } }">
-              <VCardText>
+              >
+              <span class="remove" @click="removePost(post._id)">x</span>
+              <VCardText text :to="{ name:'edit', params: { id: post._id } }">
                 <h4>{{post.journal_title}}</h4>
                 <Textarea rows="5" cols="15" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
               </VCardText>
@@ -31,6 +32,12 @@ const vuetifyTheme = useTheme()
 }
 .scroll {
   overflow-y: scroll;
+}
+.remove {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    cursor: pointer;
 }
 </style>
 
@@ -52,6 +59,12 @@ export default {
     this.posts = await API.getPostByDate(this.data.date);
     // console.log(response);
   },
+  methods: {
+              async removePost(id){
+                const response = await API.deletePost(id);
+                window.location.reload();
+              },
+            }
 }
 </script>
 
