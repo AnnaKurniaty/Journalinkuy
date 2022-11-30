@@ -1,5 +1,6 @@
 <script>
 import API from '@/api';
+import Swal from 'sweetalert2'
 
     export default {
         name : 'editJournal',
@@ -29,6 +30,7 @@ import API from '@/api';
                 formData.append('content', this.post.content);
                 //formData.append('old_image', this.post.image);
                 console.log(formData);
+                Swal.fire( 'Great!', 'Your event was saved!', 'success')
                 if(this.$refs.form.validate()){
                     const response = await API.updatePost(this.$route.params.id, formData);
                     console.log(response);
