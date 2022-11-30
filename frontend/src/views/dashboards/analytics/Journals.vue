@@ -10,16 +10,18 @@ const vuetifyTheme = useTheme()
     <VCardText class="pt-4">
         <VRow>
           <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
-            <VCard
+            <div>
+              <VCard
               subtitle="📌"
               class="position-relative"
+              text :to="{ name:'edit', params: { id: post._id } }"
               >
-              <span class="remove" @click="removePost(post._id)">x</span>
-              <VCardText text :to="{ name:'edit', params: { id: post._id } }">
+              <VCardText>
                 <h4>{{post.journal_title}}</h4>
                 <Textarea rows="5" cols="15" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
               </VCardText>
             </VCard>
+            </div>
           </VCol>
         </VRow>
     </VCardText>
