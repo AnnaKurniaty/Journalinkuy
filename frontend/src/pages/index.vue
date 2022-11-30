@@ -4,6 +4,7 @@ import Journals from '@/views/dashboards/analytics/Journals.vue'
 import Timeline from '@/views/dashboards/analytics/Timeline.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 import moment from 'moment'
+import Swal from 'sweetalert2'
 </script>
 
 <template>
