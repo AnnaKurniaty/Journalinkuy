@@ -34,7 +34,7 @@ import Swal from 'sweetalert2'
                 if(this.$refs.form.validate()){
                     const response = await API.updatePost(this.$route.params.id, formData);
                     console.log(response);
-                    this.$router.push({ name: 'home', params: {message: response.message} });
+                    this.$router.push({ name: 'journal', params: {message: response.message} });
                 }
             }
         }

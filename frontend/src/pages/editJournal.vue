@@ -28,3 +28,8 @@ import Footer from '@/layouts/components/Footer.vue'
     </template>
   </VerticalNavLayout>
 </template>
+<script>
+export default {
+  name: 'edit',
+}
+</script>
