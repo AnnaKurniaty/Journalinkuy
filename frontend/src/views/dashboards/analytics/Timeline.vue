@@ -7,22 +7,22 @@ import circle from '@/assets/images/logos/circle.png'
 const earnings = [
   {
     avatar: circle,
-    title: '17/10/2022',
-    subtitle: 'Update Journal',
+    title: '2022-11-30 ',
+    subtitle: 'Update Timeline',
     amount: '',
     progress: 'primary',
   },
   {
     avatar: circle,
-    title: '28/09/2022',
-    subtitle: 'Update Journal',
+    title: '2022-11-29',
+    subtitle: 'Update Timeline',
     amount: '',
     progress: 'info',
   },
   {
     avatar: circle,
-    title: '01/09/2022',
-    subtitle: 'Update Journal',
+    title: '2022-11-28',
+    subtitle: 'Update Timeline',
     amount: '',
     progress: 'secondary',
   },

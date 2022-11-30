@@ -30,7 +30,7 @@ import Swal from 'sweetalert2'
                 formData.append('content', this.post.content);
                 //formData.append('old_image', this.post.image);
                 console.log(formData);
-                Swal.fire( 'Great!', 'Your event was saved!', 'success')
+                Swal.fire( 'Great!', 'Your journal was saved!', 'success')
                 if(this.$refs.form.validate()){
                     const response = await API.updatePost(this.$route.params.id, formData);
                     console.log(response);
@@ -71,7 +71,7 @@ import Swal from 'sweetalert2'
                     to ="/"
                     tag="VBtn"
                 >
-                    <VBtn type="submit" @click="updateForm()"> ACCEPT </VBtn>
+                    <VBtn type="submit" @click="updateForm()"> SUBMIT </VBtn>
                 </router-link>
                 <VBtn type="reset" color="secondary" variant="tonal" > Reset </VBtn>
                 <v-row justify="center">
