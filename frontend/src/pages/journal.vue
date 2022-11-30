@@ -7,7 +7,7 @@ const vuetifyTheme = useTheme()
 <template>
 <div class="main"  style="width: 100%; " >
     <div style="position: relative;">
-        <img src="\src\assets\images\pages\thumbnail.jpg"  style="object-fit: cover; height:10rem; width:56rem; object-position: 60% 80%; border-radius: 1rem;">
+        <img src="\src\assets\images\pages\thumbnail.jpg"  style="object-fit: cover; height:10rem; width:62rem; object-position: 60% 80%; border-radius: 1rem;">
         <div style="position: absolute;  bottom: 5%;left: 2%;"> 
             <h1 style="color:white;"> Your Journal </h1>
             <p style="color:white;"> Look what you've been through </p>
