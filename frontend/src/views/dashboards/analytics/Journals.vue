@@ -16,6 +16,7 @@ const vuetifyTheme = useTheme()
               class="position-relative"
               text :to="{ name:'edit', params: { id: post._id } }"
               >
+              <!-- <span class="remove" @click="removePost(post._id)">x</span> -->
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
                 <Textarea rows="5" cols="15" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
