@@ -26,7 +26,7 @@ import Swal from 'sweetalert2'
         plain
         raised
         type="submit"
-          >+ Add Grid Journal</v-btn>
+          ><v-icon>mdi-book-plus</v-icon></v-btn></v-btn>
     </v-form> 
   </div>
 </div>
