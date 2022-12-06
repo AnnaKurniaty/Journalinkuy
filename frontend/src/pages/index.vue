@@ -26,7 +26,7 @@ import Swal from 'sweetalert2'
         plain
         raised
         type="submit"
-          ><v-icon>mdi-book-plus</v-icon></v-btn></v-btn>
+          >+ Add Grid Journal</v-btn>
     </v-form> 
   </div>
 </div>
@@ -42,9 +42,6 @@ import Swal from 'sweetalert2'
             <Timeline />
           </VCol>
 
-          <VCol cols="12" md="12" >
-            <Event />
-          </VCol>
         </VRow>
       </VCol>
     </VRow>
