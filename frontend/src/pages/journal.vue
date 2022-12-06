@@ -51,10 +51,12 @@ const vuetifyTheme = useTheme()
               text :to="{ name:'edit', params: { id: post._id } }">
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
-                <Textarea rows="5" cols="48" placeholder="Type here">{{post.content}}</Textarea>
-                <v-btn color="red" text @click="removePost(post._id)">Delete</v-btn>
+                <Textarea  rows="5" cols="48" placeholder="Type here">{{post.content}}</Textarea>
               </VCardText>
             </VCard>
+            <VCardText>
+              <v-btn color="red" text @click="removePost(post._id)">Delete</v-btn>
+            </VCardText>
           </VCol>
         </VRow>
       </VCardText>
@@ -114,7 +116,7 @@ export default {
               },
               async removePost(id){
                 const response = await API.deletePost(id);
-                this.$router.push( { name: 'journal', params: { message: response.message } } );
+                window.location.reload();
             },
             }
 }
