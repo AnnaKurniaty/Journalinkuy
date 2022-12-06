@@ -11,7 +11,7 @@ import moment from 'moment'
 
     <div class="right">
     <h3>Today</h3>
-    <p>🗓 {{moment().format("YYYY-MM-DD")}}  </p> 
+    <p>🗓 {{moment().format("DD-MM-YYYY")}}  </p> 
     </div>
 </div>
 
@@ -94,7 +94,7 @@ import moment from 'moment'
               return {
                   timelines: {
                       story: null,
-                      created:moment().format("YYYY-MM-DD HH:mm:ss"),
+                      created:moment().format("DD-MM-YYYY HH:mm:ss"),
                       events:[],
                       nonce:0,
                   },
