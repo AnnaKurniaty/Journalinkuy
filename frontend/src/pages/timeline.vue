@@ -75,7 +75,7 @@ import moment from 'moment'
                 class="text-right"
                 cols="5"
               >
-              <v-btn color="red" @click="removeTimeline(event._id)"><v-icon>mdi-content-delete</v-icon></v-btn>
+              <v-btn color="red" @click="removeTimeline(event._id)">DELETE</v-btn>
             </v-col>
             </v-row>
           </v-timeline-item>
