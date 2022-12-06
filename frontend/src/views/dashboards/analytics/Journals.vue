@@ -19,7 +19,7 @@ const vuetifyTheme = useTheme()
               <!-- <span class="remove" @click="removePost(post._id)">x</span> -->
               <VCardText>
                 <h4>{{post.journal_title}}</h4>
-                <Textarea rows="5" cols="15" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
+                <Textarea rows="5" cols="13" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
               </VCardText>
             </VCard>
             </div>

@@ -9,13 +9,13 @@ import Swal from 'sweetalert2'
 
 <template>
 <div class="container" style="display: flex;">
-  <div class="main"  style="width: 200%; " >
+  <div class="main"  style= "width: 200%" >
     <h1> Hello, Kurkur 👋</h1>
     <p>How is it going on?</p>
     <div class="grid-container">
     <div>
     <h2> Today's Journal</h2>
-    <p>🗓 {{moment().format("YYYY-MM-DD")}}  </p> 
+    <p>🗓 {{moment().format("DD-MM-YYYY")}}  </p> 
      </div>
   <div class="right">
     <v-form  ref="form" @submit.onclick="submitForm" enctype="multipart/form-data">
@@ -32,13 +32,13 @@ import Swal from 'sweetalert2'
 </div>
 
     <VRow class="match-height">
-      <VCol class="mt" cols="12"  md="8" >
+      <VCol class="mt" cols="12"  md="7" >
         <Journals />
       </VCol>
 
-      <VCol cols="12" md="4">
+      <VCol cols="12" md="5">
         <VRow>
-          <VCol cols="12" md="12">
+          <VCol cols="12" md="12" >
             <Timeline />
           </VCol>
 
@@ -47,7 +47,7 @@ import Swal from 'sweetalert2'
     </VRow>
 </div>
 
-  <div style="flex-grow: 1; padding: 20px;">
+  <div style="flex-grow: 1; padding: 20px; width: 25%" >
     <div  style="float:left;">
       <UserProfile /> 
     </div>
