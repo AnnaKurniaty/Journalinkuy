@@ -44,7 +44,7 @@ import moment from 'moment'
                 @click="comment"
                 ref="form"
               >
-                Post
+                Add
               </v-btn>
             </template>
           </v-text-field>
