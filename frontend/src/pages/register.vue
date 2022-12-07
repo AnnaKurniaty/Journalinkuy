@@ -47,7 +47,8 @@ const isPasswordVisible = ref(false)
         </p>
       </VCardText>
 
-      <VCardText>
+      <VCardText v-for="register in register"
+            :key="register.id">
         <VForm @submit.prevent="registerUser">
           <VRow>
             <!-- Username -->
