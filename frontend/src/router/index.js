@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import journal from '../views/dashboards/analytics/Journals.vue'
 import timelines from '../pages/timeline.vue'
+import register from '../pages/register.vue'
 import EditJournal from '../pages/editJournal.vue'
 
 
@@ -31,4 +32,17 @@ const router = createRouter({
   },
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem("jwt") == null) {
+      next({
+        path: "/"
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 export default router

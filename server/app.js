@@ -51,8 +51,8 @@ app.post('/register',function(req,res){
 // routes prefix
 app.use("/api/post", require('./routes/routes'))
 app.use("/api/timelines", require('./routes/routesT'))
-app.use("/api/events", require('./routes/routesE'))
-//app.use("/register", require('./routes/user'))
+// const userRoutes = require("./routes/user"); //bring in our user routes
+// app.use("/user", userRoutes);
 
 // Start server
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));

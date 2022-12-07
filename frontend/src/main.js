@@ -14,3 +14,4 @@ app.use(vuetify)
 app.use(createPinia())
 app.use(router)
 app.mount('#app')
+

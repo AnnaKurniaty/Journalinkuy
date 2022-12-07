@@ -48,19 +48,19 @@ const isPasswordVisible = ref(false)
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="() => {}">
+        <VForm @submit.prevent="registerUser">
           <VRow>
             <!-- Username -->
             <VCol cols="12">
               <VTextField
-                v-model="form.username"
+                v-model="register.name"
                 label="Username"
               />
             </VCol>
             <!-- email -->
             <VCol cols="12">
               <VTextField
-                v-model="form.email"
+                v-model="register.email"
                 label="Email"
                 type="email"
               />
@@ -69,7 +69,7 @@ const isPasswordVisible = ref(false)
             <!-- password -->
             <VCol cols="12">
               <VTextField
-                v-model="form.password"
+                v-model="register.password"
                 label="Password"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
@@ -164,3 +164,40 @@ const isPasswordVisible = ref(false)
 meta:
   layout: blank
 </route>
+<script>
+import Swal from 'sweetalert2'
+export default {
+  data() {
+    return {
+      register: {
+        name: "",
+        email: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    async registerUser() {
+      try {
+        let response = await this.$http.post("/register", this.register);
+        console.log(response);
+        let token = response.data.token;
+        if (token) {
+          localStorage.setItem("jwt", token);
+          this.$router.push("/");
+          swal("Success", "Registration Was successful", "success");
+        } else {
+          swal("Error", "Something Went Wrong", "Error");
+        }
+      } catch (err) {
+        let error = err.response;
+        if (error.status == 409) {
+          swal("Error", error.data.message, "error");
+        } else {
+          swal("Error", error.data.err.message, "error");
+        }
+      }
+    }
+  }
+};
+</script>

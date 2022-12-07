@@ -88,6 +88,7 @@ import Swal from 'sweetalert2'
 
 <script>
 import API from '@/api';
+import VueJwtDecode from "vue-jwt-decode";
 
   export default {
           data() {
@@ -104,6 +105,15 @@ import API from '@/api';
               // selectFile(file){
               //     this.image = file[0];
               // },
+              async getUserDetails() {
+                let token = localStorage.getItem("jwt");
+                let decoded = VueJwtDecode.decode(token);
+                this.user = decoded;
+              },
+              async logUserOut() {
+                localStorage.removeItem("jwt");
+                this.$router.push("/");
+              },
               async submitForm() {
                   const formData ={
                       journal_title : this.post.journal_title,
