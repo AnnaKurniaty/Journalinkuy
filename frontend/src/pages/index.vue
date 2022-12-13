@@ -32,18 +32,18 @@ import Swal from 'sweetalert2'
 </div>
 
     <VRow class="match-height">
-      <VCol class="mt" cols="12"  md="7" >
+      <VCol class="mt" cols="12"  md="15" >
         <Journals />
       </VCol>
 
-      <VCol cols="12" md="5">
+      <!-- <VCol cols="12" md="5">
         <VRow>
           <VCol cols="12" md="12" >
             <Timeline />
           </VCol>
 
         </VRow>
-      </VCol>
+      </VCol> -->
     </VRow>
 </div>
 
@@ -88,7 +88,6 @@ import Swal from 'sweetalert2'
 
 <script>
 import API from '@/api';
-import VueJwtDecode from "vue-jwt-decode";
 
   export default {
           data() {
@@ -105,15 +104,6 @@ import VueJwtDecode from "vue-jwt-decode";
               // selectFile(file){
               //     this.image = file[0];
               // },
-              async getUserDetails() {
-                let token = localStorage.getItem("jwt");
-                let decoded = VueJwtDecode.decode(token);
-                this.user = decoded;
-              },
-              async logUserOut() {
-                localStorage.removeItem("jwt");
-                this.$router.push("/");
-              },
               async submitForm() {
                   const formData ={
                       journal_title : this.post.journal_title,
