@@ -88,7 +88,7 @@ import Swal from 'sweetalert2'
 
 <script>
 import API from '@/api';
-import VueJwtDecode from "vue-jwt-decode";
+// import VueJwtDecode from "vue-jwt-decode";
 
   export default {
           data() {
