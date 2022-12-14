@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 5000;
 const User = require('./models/User');
+const {auth} =require('./middlewares/auth');
 
 // Middleware
 app.use(cors());
@@ -15,7 +17,7 @@ app.use(express.urlencoded({ extended:true }));
 app.use(express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(cookieParser());
 // Database connection
 mongoose
     .connect('mongodb+srv://journalinKuy:journalinKUY@cluster0.g3aq7y0.mongodb.net/?retryWrites=true&w=majority', {
@@ -45,6 +47,39 @@ app.post('/register',function(req,res){
                 user : doc
             });
         });
+    });
+});
+
+app.post('/login', function(req,res){
+    let token=req.cookies.auth;
+    User.findByToken(token,(err,user)=>{
+        if(err) return  res(err);
+        if(user) return res.status(400).json({
+            error :true,
+            message:"You are already logged in"
+        });
+    
+        else{
+            User.findOne({'email':req.body.email},function(err,user){
+                if(!user) return res.json({isAuth : false, message : ' Auth failed ,email not found'});
+        
+                user.comparepassword(req.body.password,(err,isMatch)=>{
+                    if(!isMatch) return res.json({ isAuth : false,message : "password doesn't match"});
+        
+                user.generateToken((err,user)=>{
+                    if(err) return res.status(400).send(err);
+                    res.cookie('auth',user.token)
+                    res.status(200).json({
+                        isAuth : true,
+                        id : user._id,
+                        email : user.email,
+                        name : user.name,
+                        token : user.token
+                    });
+                });    
+            });
+          });
+        }
     });
 });
 
