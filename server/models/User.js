@@ -4,18 +4,9 @@ const confiq=require('../config/config').get(process.env.NODE_ENV);
 const jwt = require("jsonwebtoken");
 
 const userSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Please Include your name"]
-  },
-  email: {
-    type: String,
-    required: [true, "Please Include your email"]
-  },
-  password: {
-    type: String,
-    required: [true, "Please Include your password"]
-  },
+  name: String,
+  email: String,
+  password: String,
   tokens: [
     {
       token: {

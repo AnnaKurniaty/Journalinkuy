@@ -47,8 +47,7 @@ const isPasswordVisible = ref(false)
         </p>
       </VCardText>
 
-      <VCardText v-for="register in register"
-            :key="register.id">
+      <VCardText :key="register.id">
         <VForm @submit.prevent="registerUser">
           <VRow>
             <!-- Username -->
@@ -167,36 +166,30 @@ meta:
 </route>
 <script>
 import Swal from 'sweetalert2'
+import axios from "axios";
 export default {
   data() {
     return {
       register: {
-        name: "",
-        email: "",
-        password: ""
-      }
-    };
+        name: '',
+        email: '',
+        password: '',
+      },
+    }
   },
   methods: {
-    async registerUser() {
+    async registerUser(){
+      // axios.post('http://localhost:5000/register', this.register).then(function(response){
+      //   Swal.fire("Success", "Registration Was successful", "success");
+      //   this.$router.push("/");
+      // }.bind(this));
       try {
-        let response = await this.$http.post("/register", this.register);
-        console.log(response);
-        let token = response.data.token;
-        if (token) {
-          localStorage.setItem("jwt", token);
+        axios.post('http://localhost:5000/register', this.register);
           this.$router.push("/");
-          swal("Success", "Registration Was successful", "success");
-        } else {
-          swal("Error", "Something Went Wrong", "Error");
-        }
+          Swal.fire("Success", "Registration Was successful", "success");
       } catch (err) {
-        let error = err.response;
-        if (error.status == 409) {
-          swal("Error", error.data.message, "error");
-        } else {
-          swal("Error", error.data.err.message, "error");
-        }
+        Swal.fire("Error", "Something Went Wrong", "error");
+        console.log(err.response);
       }
     }
   }

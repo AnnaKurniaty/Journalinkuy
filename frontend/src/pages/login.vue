@@ -47,12 +47,12 @@ const isPasswordVisible = ref(false)
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="() => {}">
+        <VForm @submit.prevent="loginUser">
           <VRow>
             <!-- email -->
             <VCol cols="12">
               <VTextField
-                v-model="form.email"
+                v-model="login.email"
                 label="Email"
                 type="email"
               />
@@ -61,7 +61,7 @@ const isPasswordVisible = ref(false)
             <!-- password -->
             <VCol cols="12">
               <VTextField
-                v-model="form.password"
+                v-model="login.password"
                 label="Password"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
@@ -87,7 +87,6 @@ const isPasswordVisible = ref(false)
               <VBtn
                 block
                 type="submit"
-                to="/"
               >
                 Login
               </VBtn>
@@ -156,3 +155,38 @@ const isPasswordVisible = ref(false)
 meta:
   layout: blank
 </route>
+<script>
+import Swal from 'sweetalert2'
+import axios from "axios";
+export default {
+  name : 'login',
+  data() {
+    return {
+      login: {
+        email: "",
+        password: "",
+      },
+    }
+  },
+  methods: {
+    async loginUser() {
+      // axios.post('http://localhost:5000/login', this.login).then(function(response){
+      //   Swal.fire("Success", "Login Was successful", "success");
+      //   this.$router.push("/");
+      // }.bind(this));
+      const User = new FormData();
+      User.append("username", this.login.username);
+      User.append("password", this.login.password);
+      try {
+        axios.post('http://localhost:5000/login', this.login).then(function(response){
+        Swal.fire("Success", "Login Was successful", "success");
+        this.$router.push("/");
+        })
+      } catch (err) {
+        Swal.fire("Error", "The username and / or password is incorrect", "error");
+        console.log(err.response);
+      }
+    }
+  }
+};
+</script>

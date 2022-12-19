@@ -88,6 +88,7 @@ import Swal from 'sweetalert2'
 
 <script>
 import API from '@/api';
+// import { mapGetters, mapActions } from "vuex";
 // import VueJwtDecode from "vue-jwt-decode";
 
   export default {
@@ -100,6 +101,9 @@ import API from '@/api';
                   },
                   image: "",
               }
+          },
+          computed: {
+            ...mapGetters({ Posts: "StatePosts", User: "StateUser" }),
           },
           methods: {
               // selectFile(file){
