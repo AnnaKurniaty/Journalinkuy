@@ -3,7 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import journal from '../views/dashboards/analytics/Journals.vue'
 import timelines from '../pages/timeline.vue'
-import login from '../pages/login.vue'
+import login from '../pages/index.vue'
+import dashboard from '../pages/dashboard.vue'
 import EditJournal from '../pages/editJournal.vue'
 
 
@@ -27,9 +28,17 @@ const router = createRouter({
       component: timelines
     },
     {
-      path: "/login",
-      name: "login",
+      path: '/',
+      name: 'login',
       component: login
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: dashboard,
+      meta: {
+        requiresAuth: true
+      }
     }
   ],
   scrollBehavior() {
@@ -38,20 +47,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (store.getters.isAuthenticated) {
-      next();
-      return;
-    }
-    next("/login");
-  } else {
-    next();
-  }
-});
-
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.guest)) {
-    if (store.getters.isAuthenticated) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem("jwt") == null) {
       next("/");
       return;
     }

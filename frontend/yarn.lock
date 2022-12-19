@@ -5810,6 +5810,13 @@
     "@intlify/vue-devtools" "9.2.2"
     "@vue/devtools-api" "^6.2.1"
 
+"vue-jwt-decode@^0.1.0":
+  "integrity" "sha512-4iP0NzYHkAF7G13tYPc/nudk4oNpB8GCVZupc7lekxXok1XKEgefNaGTpDT14g7RKe5H9GaMphPduDj4UVfZwQ=="
+  "resolved" "https://registry.npmjs.org/vue-jwt-decode/-/vue-jwt-decode-0.1.0.tgz"
+  "version" "0.1.0"
+  dependencies:
+    "vue" "^2.3.3"
+
 "vue-media-upload@^1.1.4":
   "integrity" "sha512-pmjuspWYZ5NAkFvJ0Eqv2FR+LBENmhR9Y7d8LAizcs3CLB73FvEAL+1bTU4RC0aXlzzE7d6i0rWT1xNaJ9dgDw=="
   "resolved" "https://registry.npmjs.org/vue-media-upload/-/vue-media-upload-1.1.4.tgz"
@@ -5852,6 +5859,14 @@
     "@vue/runtime-dom" "3.2.41"
     "@vue/server-renderer" "3.2.41"
     "@vue/shared" "3.2.41"
+
+"vue@^2.3.3":
+  "integrity" "sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ=="
+  "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.14.tgz"
+  "version" "2.7.14"
+  dependencies:
+    "@vue/compiler-sfc" "2.7.14"
+    "csstype" "^3.1.0"
 
 "vue@^2.5.17":
   "integrity" "sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ=="

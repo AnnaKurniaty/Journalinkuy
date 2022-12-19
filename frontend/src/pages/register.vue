@@ -179,10 +179,10 @@ export default {
   },
   methods: {
     async registerUser(){
-      // axios.post('http://localhost:5000/register', this.register).then(function(response){
-      //   Swal.fire("Success", "Registration Was successful", "success");
-      //   this.$router.push("/");
-      // }.bind(this));
+    //   // axios.post('http://localhost:5000/register', this.register).then(function(response){
+    //   //   Swal.fire("Success", "Registration Was successful", "success");
+    //   //   this.$router.push("/");
+    //   // }.bind(this));
       try {
         axios.post('http://localhost:5000/register', this.register);
           this.$router.push("/");
@@ -192,6 +192,19 @@ export default {
         console.log(err.response);
       }
     }
+    // async registerUser() {
+    //   try {
+    //     let response = axios.post('http://localhost:5000/register', this.register);
+    //     console.log(response);
+    //     let token = response.data.token;
+    //     localStorage.setItem("jwt", token);
+    //     this.$router.push("/");
+    //     Swal.fire("Success", "Registration Was successful", "success");
+    //   } catch (err) {
+    //     Swal.fire("Error", "Something Went Wrong", "error");
+    //     console.log(err.response);
+    //   }
+    // }
   }
 };
 </script>

@@ -6,6 +6,7 @@ import { VerticalNavLayout } from '@layouts'
 import Footer from '@/layouts/components/Footer.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
+import dashboard from '@/pages/dashboard.vue'
 </script>
 
 <template>
@@ -37,7 +38,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 
     <!-- 👉 Pages -->
     <div class="layout-page-content">
-      <RouterView />
+      <dashboard />
     </div>
 
     <!-- 👉 Footer -->
