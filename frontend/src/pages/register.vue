@@ -34,33 +34,33 @@ const isPasswordVisible = ref(false)
         </template>
 
         <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Materio
+          Journalinkuy
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Adventure starts here 🚀
+          Journey starts here 🚀
         </h5>
         <p class="mb-0">
-          Make your app management easy and fun!
+          Make your own journal, easy and fun!
         </p>
       </VCardText>
 
-      <VCardText>
-        <VForm @submit.prevent="() => {}">
+      <VCardText :key="register.id">
+        <VForm @submit.prevent="registerUser">
           <VRow>
             <!-- Username -->
             <VCol cols="12">
               <VTextField
-                v-model="form.username"
+                v-model="register.name"
                 label="Username"
               />
             </VCol>
             <!-- email -->
             <VCol cols="12">
               <VTextField
-                v-model="form.email"
+                v-model="register.email"
                 label="Email"
                 type="email"
               />
@@ -69,7 +69,7 @@ const isPasswordVisible = ref(false)
             <!-- password -->
             <VCol cols="12">
               <VTextField
-                v-model="form.password"
+                v-model="register.password"
                 label="Password"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
@@ -164,3 +164,47 @@ const isPasswordVisible = ref(false)
 meta:
   layout: blank
 </route>
+<script>
+import Swal from 'sweetalert2'
+import axios from "axios";
+export default {
+  data() {
+    return {
+      register: {
+        name: '',
+        email: '',
+        password: '',
+      },
+    }
+  },
+  methods: {
+    async registerUser(){
+    //   // axios.post('http://localhost:5000/register', this.register).then(function(response){
+    //   //   Swal.fire("Success", "Registration Was successful", "success");
+    //   //   this.$router.push("/");
+    //   // }.bind(this));
+      try {
+        axios.post('http://localhost:5000/register', this.register);
+          this.$router.push("/");
+          Swal.fire("Success", "Registration Was successful", "success");
+      } catch (err) {
+        Swal.fire("Error", "Something Went Wrong", "error");
+        console.log(err.response);
+      }
+    }
+    // async registerUser() {
+    //   try {
+    //     let response = axios.post('http://localhost:5000/register', this.register);
+    //     console.log(response);
+    //     let token = response.data.token;
+    //     localStorage.setItem("jwt", token);
+    //     this.$router.push("/");
+    //     Swal.fire("Success", "Registration Was successful", "success");
+    //   } catch (err) {
+    //     Swal.fire("Error", "Something Went Wrong", "error");
+    //     console.log(err.response);
+    //   }
+    // }
+  }
+};
+</script>

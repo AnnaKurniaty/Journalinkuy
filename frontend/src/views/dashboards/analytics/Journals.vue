@@ -1,41 +1,29 @@
 <script setup>
-import Journal1 from '@/views/dashboards/analytics/Journal1.vue'
-import Journal2 from '@/views/dashboards/analytics/Journal2.vue'
-import Journal3 from '@/views/dashboards/analytics/Journal3.vue'
-import Journal4 from '@/views/dashboards/analytics/Journal4.vue'
-import Journal5 from '@/views/dashboards/analytics/Journal5.vue'
-import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
+import { useTheme } from 'vuetify'
+import moment from 'moment'
+const vuetifyTheme = useTheme()
 </script>
 
 <template>
-  <VCard>
-    <!-- <VCardItem>
-      <h2>Journal</h2>
-    </VCardItem> -->
-
+  <br>
+  <VCard class="scroll" height="44rem">
     <VCardText class="pt-4">
         <VRow>
-          <VCol cols="4"  md="6">
-            <Journal1 />
+          <VCol cols="4"  md="6" v-for="(post) in posts" :key="post._id">
+            <div>
+              <VCard
+              subtitle="📌"
+              class="position-relative"
+              text :to="{ name:'edit', params: { id: post._id } }"
+              >
+              <!-- <span class="remove" @click="removePost(post._id)">x</span> -->
+              <VCardText>
+                <h4>{{post.journal_title}}</h4>
+                <Textarea rows="5" cols="13" placeholder="Type here">{{post.content.substring(0, 50)+"..."}}</Textarea>
+              </VCardText>
+            </VCard>
+            </div>
           </VCol>
-          <VCol cols="4"  md="6">
-            <Journal2 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal3 />
-          </VCol>
-          <VCol cols="4"  md="6">
-            <Journal4 />
-          </VCol>
-
-          <VCol cols="4"  md="6">
-            <Journal5 />
-          </VCol>
-
-          <VCol cols="4"  md="6">
-            <Journal6 />
-          </VCol>
-          
         </VRow>
     </VCardText>
   </VCard>
@@ -45,4 +33,41 @@ import Journal6 from '@/views/dashboards/analytics/Journal6.vue'
 .card-list {
   --v-card-list-gap: 2.625rem;
 }
+.scroll {
+  overflow-y: scroll;
+}
+.remove {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    cursor: pointer;
+}
 </style>
+
+<script>
+import API from '@/api';
+
+export default {
+  name: 'journal',
+  data(){
+    return {
+      posts: [],
+      data: {
+        date: moment().format("YYYY-MM-DD"),          
+    }, 
+    }
+  },
+  async created() {
+    // const date = this.data.date
+    this.posts = await API.getPostByDate(this.data.date);
+    // console.log(response);
+  },
+  methods: {
+              async removePost(id){
+                const response = await API.deletePost(id);
+                window.location.reload();
+              },
+            }
+}
+</script>
+

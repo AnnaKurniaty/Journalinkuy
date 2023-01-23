@@ -35,13 +35,13 @@ const upgradeBanner = computed(() => {
     <VerticalNavLink
       :item="{
         title: 'Dashboard',
-        to: 'index',
+        to: 'dashboard',
         icon: { icon: 'mdi-home-outline' }
       }"
     />
     <VerticalNavLink
       :item="{
-        title: 'Journal',
+        title: 'Journals',
         to: 'journal',
         icon: { icon: 'mdi-emoticon-happy-outline' }
       }"
@@ -67,6 +67,8 @@ const upgradeBanner = computed(() => {
         icon: { icon: 'mdi-account-cog-outline' }
       }"
     />
+    
+    
     <!-- 👉 Pages -->
     <VerticalNavSectionTitle :item="{ heading: 'Pages' }" />
     <VerticalNavLink
@@ -97,7 +99,7 @@ const upgradeBanner = computed(() => {
     /> -->
 
     <!-- 👉 User Interface -->
-    <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" />
+    <!-- <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" /> -->
 
     <!-- <VerticalNavLink
       :item="{
@@ -127,13 +129,13 @@ const upgradeBanner = computed(() => {
         icon: { icon: 'mdi-table' }
       }"
     /> -->
-    <VerticalNavLink
+    <!-- <VerticalNavLink
       :item="{
         title: 'Form Layouts',
         to: 'form-layouts',
         icon: { icon: 'mdi-form-select' }
       }"
-    />
+    /> -->
   </ul>
 
 </template>

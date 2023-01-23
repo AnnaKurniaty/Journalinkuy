@@ -19,11 +19,6 @@ const tabs = [
     icon: 'mdi-lock-open-outline',
     tab: 'security',
   },
-  {
-    title: 'Notifications',
-    icon: 'mdi-bell-outline',
-    tab: 'notification',
-  },
 ]
 </script>
 
